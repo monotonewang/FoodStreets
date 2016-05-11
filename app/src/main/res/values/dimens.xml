@@ -1,0 +1,10 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="custem_vp_top3_fragment_recommend_navview">10dp</dimen>
+    <dimen name="fragment_recommend_vp_margin1">16dp</dimen>
+    <dimen name="fragment_recommend_vp_margin2">6dp</dimen>
+    <dimen name="fragment_recommend_vp_textSize1">16sp</dimen>
+    <dimen name="fragment_recommend_vp_textSize2">12sp</dimen>
+</resources>

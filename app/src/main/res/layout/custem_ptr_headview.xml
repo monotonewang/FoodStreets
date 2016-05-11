@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:id="@+id/headView_ll"
+    android:orientation="horizontal">
+
+
+
+      <!--  <ImageView
+            android:id="@+id/iv_headview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/refreshpot_1" />-->
+        <ImageView
+            android:id="@+id/iv_wait"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/refreshpot_1"
+            android:layout_height="wrap_content" />
+       <!-- <com.example.user.foodstreet.custem.WaitView
+            android:id="@+id/custem_ptr_headView_wv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+        >
+        </com.example.user.foodstreet.custem.WaitView>-->
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/custem_ptr_headView_tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fragment_recommend_head_search_refresh_on_pull_movie" />
+
+        <TextView
+            android:id="@+id/custem_ptr_headView_tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fragment_recommend_head_search_refresh_under_word" />
+    </LinearLayout>
+</LinearLayout>

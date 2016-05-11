@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="navView">
+        <attr name="checkImage" format="reference"></attr>
+        <attr name="unCheckImage" format="reference"></attr>
+        <attr name="count" format="integer"></attr>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">我的美食街</string>
+    <string name="fragment_recommend_head_search_box">搜索你感兴趣的</string>
+    <string name="fragment_recommend_head_search_refresh_on_pull_movie">下拉刷新</string>
+    <string name="fragment_recommend_head_search_refresh_on_refresh">松开刷新数据</string>
+    <string name="fragment_recommend_head_search_refresh_refresh_complete">正在加载...</string>
+    <string name="fragment_recommend_head_search_refresh_under_word">上次刷新：刚刚.</string>
+    <string name="fragment_recommend_RadioButton_recom">推荐</string>
+    <string name="fragment_recommend_RadioButton_dis">发现</string>
+    <string name="fragment_recommend_RadioButton_shop">商场</string>
+    <string name="fragment_recommend_RadioButton_eatTalk">食话</string>
+    <string name="fragment_recommend_RadioButton_mine">我的</string>
+    <string name="custem_fenlei_fragment_recommend">最新商品</string>
+</resources>

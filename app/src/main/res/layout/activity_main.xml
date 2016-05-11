@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.user.foodstreet.MainActivity">
+
+  <!--  <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/sdv"
+        android:layout_width="60dp"
+        android:layout_height="60dp" />-->
+    <FrameLayout
+        android:id="@+id/activity_main_fl"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </FrameLayout>
+
+    <RadioGroup
+        android:id="@+id/fragment_recommend_radiogp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:paddingLeft="0dp">
+
+        <RadioButton
+            android:id="@+id/fragment_recommend_radiobtn_recommend"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/selector_fragment_recommend_rec"
+            android:gravity="center"
+            android:text="@string/fragment_recommend_RadioButton_recom" />
+
+        <RadioButton
+            android:id="@+id/fragment_recommend_radiobtn_faxian"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/selector_fragment_recommend_dis"
+            android:gravity="center"
+            android:text="@string/fragment_recommend_RadioButton_dis" />
+
+        <RadioButton
+            android:id="@+id/fragment_recommend_radiobtn_shop"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/selector_fragment_recommend_shop"
+            android:gravity="center"
+            android:text="@string/fragment_recommend_RadioButton_shop" />
+
+        <RadioButton
+            android:id="@+id/fragment_recommend_radiobtn_eattalkd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/selector_fragment_recommend_eattalk"
+            android:gravity="center"
+            android:text="@string/fragment_recommend_RadioButton_eatTalk" />
+
+        <RadioButton
+            android:id="@+id/fragment_recommend_radiobtn_mine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/selector_fragment_recommend_mine"
+            android:gravity="center"
+            android:text="@string/fragment_recommend_RadioButton_mine" />
+    </RadioGroup>
+</LinearLayout>
