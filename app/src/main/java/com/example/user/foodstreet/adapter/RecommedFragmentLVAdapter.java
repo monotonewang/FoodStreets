@@ -17,7 +17,7 @@ import java.util.List;
 
 /**
  * Created by user on 2016/2/27.
- * 这是首页Fragment中的ListView
+ * 这是首页Fragment中的ListView--GridView
  */
 public class RecommedFragmentLVAdapter extends BaseAdapter {
 
