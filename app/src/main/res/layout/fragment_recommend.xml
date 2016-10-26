@@ -51,10 +51,10 @@
             android:src="@android:drawable/ic_btn_speak_now"
             app:layout_behavior="com.example.user.foodstreet.behavior.RecommedFragmentScroolBehavior" />
 
-        <com.example.user.foodstreet.custem.PullToRefreshView
+        <com.wang.www.custem.PullToRefreshView
             android:id="@+id/fragment_recommend_ptrView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></com.example.user.foodstreet.custem.PullToRefreshView>
+            android:layout_height="match_parent"></com.wang.www.custem.PullToRefreshView>
 
 
     </android.support.design.widget.CoordinatorLayout>

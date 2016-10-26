@@ -2,9 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.example.user.foodstreet.custem.RecommendLargeListView
+    <com.wang.www.custem.RecommendLargeListView
         android:id="@+id/custem_lv_zt_fragment_recommend_lv"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    </com.example.user.foodstreet.custem.RecommendLargeListView>
+    </com.wang.www.custem.RecommendLargeListView>
 </LinearLayout>

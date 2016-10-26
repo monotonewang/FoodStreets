@@ -19,12 +19,12 @@
             android:layout_gravity="center"
             android:src="@drawable/refreshpot_1"
             android:layout_height="wrap_content" />
-       <!-- <com.example.user.foodstreet.custem.WaitView
+       <!-- <com.wang.www.custem.WaitView
             android:id="@+id/custem_ptr_headView_wv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
         >
-        </com.example.user.foodstreet.custem.WaitView>-->
+        </com.wang.www.custem.WaitView>-->
 
 
     <LinearLayout
