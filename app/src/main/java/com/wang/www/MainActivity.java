@@ -43,30 +43,68 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void init() {
         super.init();
-
+        RadioButton radioButton = (RadioButton) radioGroup.getChildAt(0);
+        radioButton.setChecked(true);
+        fragmentManager = getFragmentManager();
+        recommendFragment = new RecommendFragment();
+        foundFragment = new FoundFragment();
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId) {
+                    case R.id.main_recommend:
+                        fragmentTransaction = fragmentManager.beginTransaction();
+                        if (!foundFragment.isHidden()) {
+                            fragmentTransaction.hide(foundFragment);
+                        }
+                        if (recommendFragment.isAdded()) {
+                            fragmentTransaction.show(recommendFragment);
+                        } else {
+                            fragmentTransaction.add(R.id.main_fl, recommendFragment);
+                        }
+                        fragmentTransaction.commit();
+//                fragmentTransaction.hide(shopFragment);
+//                fragmentTransaction.hide(eatFragment);
+//                fragmentTransaction.hide(meFragment);
+                        break;
+                    case R.id.main_found:
+                        fragmentTransaction = fragmentManager.beginTransaction();
+                        if (!recommendFragment.isHidden()) {
+                            fragmentTransaction.hide(recommendFragment);
+                        } else {
+                            fragmentTransaction.show(recommendFragment);
+                        }
+                        if (foundFragment.isAdded()) {
+                            fragmentTransaction.show(foundFragment);
+                        } else {
+                            fragmentTransaction.add(R.id.main_fl, foundFragment);
+                        }
+                        fragmentTransaction.commit();
+//                fragmentTransaction.hide(shopFragment);
+//                fragmentTransaction.hide(eatFragment);
+//                fragmentTransaction.hide(meFragment);
+                        break;
+                }
+            }
+        });
     }
 
     @Override
     protected void loadDatas() {
         super.loadDatas();
-        fragmentManager = getFragmentManager();
-        recommendFragment = new RecommendFragment();
-        foundFragment = new FoundFragment();
+
 //        shopFragment = new ShopFragment();
 //        eatFragment = new EatFragment();
 //        meFragment = new MeFragment();
 
-        RadioButton radioButton = (RadioButton) radioGroup.getChildAt(1);
-        radioButton.setChecked(true);
 
-        fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.main_fl, recommendFragment);
-        fragmentTransaction.addToBackStack("");
+//        fragmentTransaction = fragmentManager.beginTransaction();
+//        fragmentTransaction.add(R.id.main_fl, recommendFragment);
 //        fragmentTransaction.add(R.id.main_fl, foundFragment);
 //        fragmentTransaction.add(R.id.main_fl, shopFragment, Constants.TAG.SHOP_FRAMENT);
 //        fragmentTransaction.add(R.id.main_fl, eatFragment, Constants.TAG.EAT_FRAMENT);
 //        fragmentTransaction.add(R.id.main_fl, meFragment, Constants.TAG.ME_FRAMENT);
-        fragmentTransaction.commit();
+//        fragmentTransaction.commit();
 //        use Fresco load image
 //        FrescoUtil.imageViewBind("http://pic.nipic.com/2007-11-09/2007119122519868_2.jpg", simpleDraweeView);
     }
@@ -76,23 +114,9 @@ public class MainActivity extends BaseActivity {
         switch (view.getId()) {
             case R.id.main_recommend:
 
-//                switchFragment(fragmentManager.);
-                fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.hide(foundFragment);
-//                fragmentTransaction.hide(shopFragment);
-//                fragmentTransaction.hide(eatFragment);
-//                fragmentTransaction.hide(meFragment);
-                fragmentTransaction.show(recommendFragment);
-                fragmentTransaction.commit();
                 break;
             case R.id.main_found:
-                fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.hide(recommendFragment);
-//                fragmentTransaction.hide(shopFragment);
-//                fragmentTransaction.hide(eatFragment);
-//                fragmentTransaction.hide(meFragment);
-                fragmentTransaction.show(foundFragment);
-                fragmentTransaction.commit();
+
                 break;
             case R.id.main_shop:
                 fragmentTransaction = fragmentManager.beginTransaction();
@@ -126,12 +150,12 @@ public class MainActivity extends BaseActivity {
         }
     }
 
-    private void switchFragment(Fragment fromFragment,Fragment toFragment) {
-        if(fromFragment!=toFragment){
+    private void switchFragment(Fragment fromFragment, Fragment toFragment) {
+        if (fromFragment != toFragment) {
             fragmentTransaction = fragmentManager.beginTransaction();
-            if(toFragment.isAdded()){
-                fragmentTransaction.hide(fromFragment).add(R.id.main_fl,toFragment).commit();
-            }else{
+            if (toFragment.isAdded()) {
+                fragmentTransaction.hide(fromFragment).add(R.id.main_fl, toFragment).commit();
+            } else {
                 fragmentTransaction.hide(fromFragment).show(toFragment).commit();
             }
         }
