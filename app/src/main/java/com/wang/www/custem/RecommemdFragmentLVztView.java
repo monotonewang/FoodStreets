@@ -8,7 +8,7 @@ import android.widget.ListView;
 
 import com.wang.www.R;
 import com.wang.www.adapter.RecommendFragmentLvztAdapter;
-import com.wang.www.model.RecommendFoodModel;
+import com.wang.www.model.MainEntity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -19,10 +19,10 @@ import butterknife.ButterKnife;
 public class RecommemdFragmentLVztView extends LinearLayout {
     @Bind(R.id.custem_lv_zt_fragment_recommend_lv)
     public ListView listView;
-    private RecommendFoodModel recommendFoodByJson;
+    private MainEntity recommendFoodByJson;
     private String TAG="rflvztView";
 
-    public RecommemdFragmentLVztView(Context context,  RecommendFoodModel recommendFoodByJson) {
+    public RecommemdFragmentLVztView(Context context,  MainEntity recommendFoodByJson) {
         super(context);
         this.recommendFoodByJson=recommendFoodByJson;
         init();

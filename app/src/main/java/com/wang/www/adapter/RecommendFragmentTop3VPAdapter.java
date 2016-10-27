@@ -1,33 +1,20 @@
 package com.wang.www.adapter;
 
 import android.content.Context;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.PagerAdapter;
+import android.view.View;
 
-import com.wang.www.fragment.RecommendTop3VPFragment;
-import com.wang.www.model.RecommendFoodModel;
+import com.wang.www.model.MainEntity;
 
 /**
  * Created by user on 2016/2/26.
  */
-public class RecommendFragmentTop3VPAdapter extends FragmentPagerAdapter {
+public class RecommendFragmentTop3VPAdapter extends PagerAdapter {
 
-    private final String TAG="Recommendtop3VPAdapter";
-    private RecommendFoodModel.ObjEntity top3;
-//    private List<SimpleDraweeView> simpleDraweeViews;
+    private final String TAG = "Recommendtop3VPAdapter";
+    private MainEntity.ObjEntity top3;
+    //    private List<SimpleDraweeView> simpleDraweeViews;
     private Context context;
-
-    public RecommendFragmentTop3VPAdapter(Context context, RecommendFoodModel.ObjEntity top3, FragmentManager fm) {
-        super(fm);
-        this.context=context;
-        this.top3=top3;
-    }
-
-    @Override
-    public Fragment getItem(int position) {
-        return RecommendTop3VPFragment.getInstance(top3.agetTop3().get(position));
-    }
 
 
     @Override
@@ -35,8 +22,13 @@ public class RecommendFragmentTop3VPAdapter extends FragmentPagerAdapter {
         return top3.agetTop3().size();
     }
 
+    @Override
+    public boolean isViewFromObject(View view, Object object) {
+        return false;
+    }
 
-      /*  public RecommendFragmentTop3VPAdapter(Context context, List<RecommendFoodModel.ObjEntity.Top3Entity> top3) {
+
+      /*  public RecommendFragmentTop3VPAdapter(Context context, List<MainEntity.ObjEntity.Top3Entity> top3) {
         this.context=context;
         this.top3=top3;
         simpleDraweeViews =new ArrayList<>();

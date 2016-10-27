@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">我的美食街</string>
+    <string name="app_name">FoodStreets</string>
     <string name="fragment_recommend_head_search_box">搜索你感兴趣的</string>
     <string name="fragment_recommend_head_search_refresh_on_pull_movie">下拉刷新</string>
     <string name="fragment_recommend_head_search_refresh_on_refresh">松开刷新数据</string>

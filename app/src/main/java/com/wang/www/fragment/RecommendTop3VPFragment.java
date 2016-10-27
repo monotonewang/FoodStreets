@@ -1,13 +1,13 @@
 package com.wang.www.fragment;
 
+import android.app.Fragment;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.View;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.wang.www.R;
 import com.wang.www.base.BaseFragment;
-import com.wang.www.model.RecommendFoodModel;
+import com.wang.www.model.MainEntity;
 import com.wang.www.util.Constants;
 import com.wang.www.util.FrescoUtil;
 
@@ -19,7 +19,7 @@ import butterknife.Bind;
 public class RecommendTop3VPFragment extends BaseFragment {
     @Bind(R.id.fragment_top3_vp_recommend_sdv)
     public SimpleDraweeView simpleDraweeView;
-    public static Fragment getInstance(RecommendFoodModel.ObjEntity.Top3Entity top3){
+    public static Fragment getInstance(MainEntity.ObjEntity.Top3Entity top3){
         RecommendTop3VPFragment recommendTop3VPFragment=new RecommendTop3VPFragment();
         Bundle bundle=new Bundle();
         bundle.putSerializable(Constants.KEYNAME.RECOMMEND_FRAGMENT_VP_TOP3, top3);
@@ -41,7 +41,7 @@ public class RecommendTop3VPFragment extends BaseFragment {
     protected void loadDatas() {
         super.loadDatas();
         Bundle bundle = getArguments();
-        RecommendFoodModel.ObjEntity.Top3Entity top3 = (RecommendFoodModel.ObjEntity.Top3Entity) bundle.getSerializable(Constants.KEYNAME.RECOMMEND_FRAGMENT_VP_TOP3);
+        MainEntity.ObjEntity.Top3Entity top3 = (MainEntity.ObjEntity.Top3Entity) bundle.getSerializable(Constants.KEYNAME.RECOMMEND_FRAGMENT_VP_TOP3);
         FrescoUtil.imageViewBind(top3.getPhoto(),simpleDraweeView);
     }
 }

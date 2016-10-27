@@ -18,7 +18,7 @@ public class SplashActivity extends BaseActivity {
     private Handler handler=new Handler();
     @Override
     protected int getViewResId() {
-        return R.layout.activity_welcome;
+        return R.layout.activity_splash;
     }
 
     @Override

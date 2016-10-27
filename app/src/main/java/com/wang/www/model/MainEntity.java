@@ -6,10 +6,10 @@ import java.util.List;
 /**
  * Created by user on 2016/2/25.
  */
-public class RecommendFoodModel implements Serializable {
+public class MainEntity implements Serializable {
     @Override
     public String toString() {
-        return "RecommendFoodModel{" +
+        return "MainEntity{" +
                 "code='" + code + '\'' +
                 ", obj=" + obj +
                 '}';

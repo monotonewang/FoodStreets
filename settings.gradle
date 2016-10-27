@@ -1,1 +1,1 @@
-include ':app', ':cycle-view-pager'
+include ':app'

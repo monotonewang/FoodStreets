@@ -1,14 +1,13 @@
 package com.wang.www.fragment;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.View;
 import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.wang.www.R;
 import com.wang.www.base.BaseFragment;
-import com.wang.www.model.RecommendFoodModel;
+import com.wang.www.model.MainEntity;
 import com.wang.www.util.Constants;
 import com.wang.www.util.FrescoUtil;
 
@@ -30,14 +29,14 @@ public class RecommentVpFragment extends BaseFragment {
     public List<TextView> textViews2;
     private String TAG="RecommentVpFragment";
 
-    public static Fragment getInstance(ArrayList<RecommendFoodModel.ObjEntity.SanCanEntity> datas,ArrayList<RecommendFoodModel.ObjEntity.SanCanTitlesEntity> dataTitle){
-        RecommentVpFragment recommentVpFragment=new RecommentVpFragment();
-        Bundle bundle=new Bundle();
-        bundle.putSerializable(Constants.KEYNAME.RECOMMEND_FRAGMENT_VP,datas);
-        bundle.putSerializable(Constants.KEYNAME.RECOMMEND_FRAGMENT_VP_TITLE,dataTitle);
-        recommentVpFragment.setArguments(bundle);
-        return recommentVpFragment;
-    }
+//    public static Fragment getInstance(ArrayList<MainEntity.ObjEntity.SanCanEntity> datas, ArrayList<MainEntity.ObjEntity.SanCanTitlesEntity> dataTitle){
+//        RecommentVpFragment recommentVpFragment=new RecommentVpFragment();
+//        Bundle bundle=new Bundle();
+//        bundle.putSerializable(Constants.KEYNAME.RECOMMEND_FRAGMENT_VP,datas);
+//        bundle.putSerializable(Constants.KEYNAME.RECOMMEND_FRAGMENT_VP_TITLE,dataTitle);
+//        recommentVpFragment.setArguments(bundle);
+////        return recommentVpFragment;
+//    }
     @Override
     protected int getViewResId() {
         return R.layout.fragment_vp_recomend;
@@ -53,8 +52,8 @@ public class RecommentVpFragment extends BaseFragment {
     protected void loadDatas() {
         super.loadDatas();
         Bundle bundle = getArguments();
-        ArrayList<RecommendFoodModel.ObjEntity.SanCanEntity> datas = (ArrayList<RecommendFoodModel.ObjEntity.SanCanEntity>) bundle.get(Constants.KEYNAME.RECOMMEND_FRAGMENT_VP);
-        ArrayList<RecommendFoodModel.ObjEntity.SanCanTitlesEntity> dataTitle= (ArrayList<RecommendFoodModel.ObjEntity.SanCanTitlesEntity>) getArguments().getSerializable(Constants.KEYNAME.RECOMMEND_FRAGMENT_VP_TITLE);
+        ArrayList<MainEntity.ObjEntity.SanCanEntity> datas = (ArrayList<MainEntity.ObjEntity.SanCanEntity>) bundle.get(Constants.KEYNAME.RECOMMEND_FRAGMENT_VP);
+        ArrayList<MainEntity.ObjEntity.SanCanTitlesEntity> dataTitle= (ArrayList<MainEntity.ObjEntity.SanCanTitlesEntity>) getArguments().getSerializable(Constants.KEYNAME.RECOMMEND_FRAGMENT_VP_TITLE);
 //        Log.e(TAG, "loadDatas: size=" + datas.size() + "/n" + "data===" + datas);
 
             FrescoUtil.imageViewBind(datas.get(0).getTitlepic(), simpleDraweeView.get(0));

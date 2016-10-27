@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.wang.www.R;
-import com.wang.www.model.RecommendFoodModel;
+import com.wang.www.model.MainEntity;
 import com.wang.www.util.FrescoUtil;
 
 import java.util.List;
@@ -22,9 +22,9 @@ import java.util.List;
 public class RecommedFragmentLVAdapter extends BaseAdapter {
 
     private Context context;
-    private List<RecommendFoodModel.ObjEntity.ShopsEntity> list;
+    private List<MainEntity.ObjEntity.ShopsEntity> list;
 
-    public RecommedFragmentLVAdapter(Context context, List<RecommendFoodModel.ObjEntity.ShopsEntity> list) {
+    public RecommedFragmentLVAdapter(Context context, List<MainEntity.ObjEntity.ShopsEntity> list) {
         this.context=context;
         this.list=list;
     }

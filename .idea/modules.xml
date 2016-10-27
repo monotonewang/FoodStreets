@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FoodStreets.iml" filepath="$PROJECT_DIR$/FoodStreets.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cycle-view-pager/cycle-view-pager.iml" filepath="$PROJECT_DIR$/cycle-view-pager/cycle-view-pager.iml" />
     </modules>
   </component>
 </project>
