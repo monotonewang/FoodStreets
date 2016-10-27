@@ -71,8 +71,6 @@ public class MainActivity extends BaseActivity {
                         fragmentTransaction = fragmentManager.beginTransaction();
                         if (!recommendFragment.isHidden()) {
                             fragmentTransaction.hide(recommendFragment);
-                        } else {
-                            fragmentTransaction.show(recommendFragment);
                         }
                         if (foundFragment.isAdded()) {
                             fragmentTransaction.show(foundFragment);
