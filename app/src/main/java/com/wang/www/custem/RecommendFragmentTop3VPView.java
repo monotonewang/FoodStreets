@@ -20,7 +20,7 @@ public class RecommendFragmentTop3VPView extends FrameLayout implements ViewPage
     @Bind(R.id.custem_vp_top3_fragment_recommend_vp)
     public ViewPager viewPager;
     @Bind(R.id.custem_vp_top3_fragment_recommend_navview)
-    public Nav_View nav_view;
+    public NavView nav_view;
     private MainEntity recommendFoodByJson;
     private FragmentManager fragmentManager;
     public RecommendFragmentTop3VPView(Context context, MainEntity recommendFoodByJson, FragmentManager fragmentManager) {

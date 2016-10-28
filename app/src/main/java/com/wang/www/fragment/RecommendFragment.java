@@ -2,19 +2,32 @@ package com.wang.www.fragment;
 
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Handler;
+import android.support.v4.view.ViewPager;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.AbsListView;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
 
+import com.alibaba.fastjson.JSONObject;
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.error.ANError;
-import com.androidnetworking.interfaces.JSONObjectRequestListener;
+import com.androidnetworking.interfaces.StringRequestListener;
+import com.bumptech.glide.Glide;
+import com.facebook.drawee.view.SimpleDraweeView;
+import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.wang.www.R;
+import com.wang.www.adapter.RecommendViewPagerAdapter;
 import com.wang.www.base.BaseFragment;
 import com.wang.www.custem.RecommendFragmentVPView;
+import com.wang.www.custem.RecommendView;
 import com.wang.www.model.MainEntity;
+import com.wang.www.model.RecommendEntity;
 import com.wang.www.util.Constants;
-
-import org.json.JSONObject;
+import com.wang.www.util.FrescoUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,16 +36,19 @@ import java.util.List;
  * Created by user on 2016/2/25.
  */
 public class RecommendFragment extends BaseFragment {
-    private String TAG="RecommendFragment";
-//    private List<MainEntity.ObjEntity.SanCanEntity> sanCanEntitie;
+    private String TAG = "RecommendFragment";
+    //    private List<MainEntity.ObjEntity.SanCanEntity> sanCanEntitie;
     private List<ArrayList<MainEntity.ObjEntity.SanCanEntity>> sanCanEntities;//这是ViewPager传递的数据
     private List<ArrayList<MainEntity.ObjEntity.SanCanTitlesEntity>> sanCanTitlesEntities;
-//    @Bind(R.id.fragment_recommend_ptrView)
+    //    @Bind(R.id.fragment_recommend_ptrView)
 //    public PullToRefreshView pullToRefreshView;
     private RecommendFragmentVPView recommendFragmentVPView;
-    private Handler handler=new Handler();
+    private Handler handler = new Handler();
     private String name;
     private AnimationDrawable animation;
+    private RecommendView recommendView;
+    private PullToRefreshListView recommendListView;
+    private ViewPager viewPager;
 
     @Override
     protected int getViewResId() {
@@ -42,6 +58,13 @@ public class RecommendFragment extends BaseFragment {
     @Override
     protected void init(View view) {
         super.init(view);
+        recommendListView = (PullToRefreshListView) view.findViewById(R.id.recommend_ptr);
+        SimpleDraweeView recommendSdv = (SimpleDraweeView) view.findViewById(R.id.recommend_sdv);
+        FrescoUtil.imageViewBind("http://img.sootuu.com/vector/200801/097/310.jpg", recommendSdv);
+        ImageView imageView = (ImageView) view.findViewById(R.id.recommend_iv);
+        Glide.with(this).load("http://img1.imgtn.bdimg.com/it/u=1293775107,6809434&fm=21&gp=0.jpg").into(imageView);
+        viewPager = (ViewPager) view.findViewById(R.id.recommend_vp);
+
 //        pullToRefreshView.setHeadView(R.layout.custem_ptr_headview);
 //        pullToRefreshView.getListView().setOnItemClickListener(this);
 //        pullToRefreshView.setOnPullToRefreshListener(new PullToRefreshView.OnPullToRefreshListener() {
@@ -100,13 +123,48 @@ public class RecommendFragment extends BaseFragment {
     protected void loadDatas() {
         super.loadDatas();
 //        OkHttpUtil.downJSON(Constants.URL.RecommendUrl, this);
+        List<String> list = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            list.add("你好下拉刷新" + i);
+        }
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, list);
+        recommendListView.setAdapter(arrayAdapter);
+
         AndroidNetworking.post(Constants.URL.recommendUrl)
                 .build()
-                .getAsJSONObject(new JSONObjectRequestListener() {
+                .getAsString(new StringRequestListener() {
                     @Override
-                    public void onResponse(JSONObject response) {
-                        Log.e(TAG, "onResponse: "+response);
-                        
+                    public void onResponse(String response) {
+                        RecommendEntity recommendEntity = JSONObject.parseObject(response, RecommendEntity.class);
+//                        Log.e(TAG,recommendEntity.toString());
+                        if (Integer.parseInt(recommendEntity.getCode()) == 1) {
+                            List<RecommendEntity.ObjBean.SanCanBean> san_can = recommendEntity.getObj().getSan_can();
+                            ArrayList<RecommendEntity.ObjBean.SanCanBean> sancanEntity = (ArrayList<RecommendEntity.ObjBean.SanCanBean>) san_can;
+
+                            RecommendViewPagerAdapter recommendViewPagerAdapter = new RecommendViewPagerAdapter(getFragmentManager(), sancanEntity, getActivity());
+                            Log.e(TAG, "onResponse: " + sancanEntity);
+
+//                            viewPager.setAdapter(recommendViewPagerAdapter);
+
+
+                            AbsListView.LayoutParams layoutParams = new AbsListView.LayoutParams(AbsListView.LayoutParams.MATCH_PARENT, AbsListView.LayoutParams.WRAP_CONTENT);
+                            TextView textView = new TextView(getActivity());
+                            textView.setText("add");
+                            textView.setGravity(Gravity.CENTER);
+                            textView.setTextSize(16);
+                            textView.setLayoutParams(layoutParams);
+
+                            ListView listView = recommendListView.getRefreshableView();
+                            listView.addHeaderView(textView);
+
+                            recommendView = new RecommendView(getActivity());
+                            ViewPager viewPager = recommendView.getViewPager();
+                            viewPager.setAdapter(recommendViewPagerAdapter);
+                            listView.addHeaderView(recommendView);
+
+
+                        }
+
                     }
 
                     @Override
@@ -116,7 +174,6 @@ public class RecommendFragment extends BaseFragment {
                 });
 //        recommendFragmentVPView.setUrl(Constants.URL.RecommendUrl);
     }
-
 
 
 }

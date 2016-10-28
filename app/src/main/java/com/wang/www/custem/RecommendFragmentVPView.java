@@ -28,7 +28,7 @@ public class RecommendFragmentVPView extends LinearLayout implements OkHttpUtil.
     private List<ArrayList<MainEntity.ObjEntity.SanCanTitlesEntity>> sanCanTitlesEntities;
     private FragmentManager fragmentManager;
     @Bind(R.id.fragment_recommend_nav)
-    public Nav_View navView;
+    public NavView navView;
 
     public RecommendFragmentVPView(Context context, FragmentManager fragmentManager) {
         super(context);

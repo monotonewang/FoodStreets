@@ -15,7 +15,7 @@ import com.wang.www.R;
 /**
  * Created by user on 2016/2/2.
  */
-public class Nav_View extends FrameLayout {
+public class NavView extends FrameLayout {
 
 
     //线性布局
@@ -29,11 +29,11 @@ public class Nav_View extends FrameLayout {
 
     private int index;//当前被选中的下标
 
-    public Nav_View(Context context) {
+    public NavView(Context context) {
         super(context);
         init();
     }
-    public Nav_View(Context context, AttributeSet attrs) {
+    public NavView(Context context, AttributeSet attrs) {
         super(context, attrs);
         getAttrs(attrs);
         init();

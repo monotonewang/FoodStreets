@@ -1,10 +1,11 @@
 package com.wang.www.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * deso: FoodStreets TODO<br/>
- * time: 2016/10/27 15:43 <br/>
+ * time: 2016/10/28 10:59 <br/>
  * author: 7 <br/>
  * since: V ${version} <br/>
  */
@@ -12,22 +13,23 @@ import java.util.List;
 public class RecommendEntity {
 
     /**
-     * code : 11
-     * obj : {"san_can":[{"id":"1639649","titlepic":"http://images.meishij.net/p/20161025/583cb0e101d16639c5e42611cc7f6bfa.jpg","title":"粢饭团","descr":"总是豆浆配油条，这简直是小看了油条","click_type":"5","click_obj":"1639649","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/94/48/4324594/a4324594_143671336859266.jpg","fav_num":"557","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1639649\"}}"},{"id":"1656027","titlepic":"http://images.meishij.net/p/20161025/8a290cfe7ba5724706d0d8ec4ef9c6e4.jpg","title":"焦脆三鲜锅贴","descr":"同样的用料不一样的口感，每一口都回味无穷","click_type":"5","click_obj":"1656027","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/184/180/4420184/a4420184_144886212019012.jpg","fav_num":"11849","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1656027\"}}"},{"id":"613012","titlepic":"http://images.meishij.net/p/20161025/a08027821c0333c7557c6c59f0f0702c.jpg","title":"红油豆腐脑","descr":"麻辣嫩滑的豆腐脑才是开胃暖身的利器！","click_type":"5","click_obj":"613012","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/208/36/1259208/a1259208_90184.jpg","fav_num":"6036","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"613012\"}}"},{"id":"1796628","titlepic":"http://images.meishij.net/p/20161025/190291eb73a75aef190c04932ac37234.jpg","title":"烤肉末茄子","descr":"茄子吃进肉的香气，健康烹饪轻松光盘","click_type":"5","click_obj":"1796628","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/139/60/2827639/a2827639_147712814571279.jpg","fav_num":"1630","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1796628\"}}"},{"id":"1797086","titlepic":"http://images.meishij.net/p/20161025/c9e08393d972e10e966a15c8ba386fd5.jpg","title":"糖醋藕丁","descr":"万用糖醋汁可以做很多菜，让藕丁变得超级下饭","click_type":"5","click_obj":"1797086","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/33/132/95533/a95533_147723460179590.jpg","fav_num":"1750","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1797086\"}}"},{"id":"1797003","titlepic":"http://images.meishij.net/p/20161025/53863500bfae11491cdb2702352133aa.jpg","title":"绝味蒜泥鸡蛋","descr":"停不下筷子的蒜泥鸡蛋，墙裂推荐大家试一试","click_type":"5","click_obj":"1797003","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/52/75/2268802/a2268802_147728216001779.jpg","fav_num":"1448","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1797003\"}}"},{"id":"1797073","titlepic":"http://images.meishij.net/p/20161025/714824d2bcebbdd7776e03f38542e22d.jpg","title":"简易DIY糖葫芦","descr":"又是一年山楂季，将一串串酸甜的好味道封存","click_type":"5","click_obj":"1797073","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/223/222/4055723/a4055723_147729053111306.jpg","fav_num":"1243","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1797073\"}}"},{"id":"1796944","titlepic":"http://images.meishij.net/p/20161025/6dc78b2977e7d49aac76611674831bf5.jpg","title":"\u201c冰淇淋\u201d面包筒","descr":"天冷想吃冰淇淋，别任性啦，吃个神似的解馋吧","click_type":"5","click_obj":"1796944","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/108/183/358358/a358358_147727914277009.jpg","fav_num":"6","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1796944\"}}"},{"id":"1664909","titlepic":"http://images.meishij.net/p/20161025/bb4912f45abbbf4edfc76fd8c5e49096.jpg","title":"牛奶炖蛋","descr":"适合一家大小食用的甜品，制作简单营养满满","click_type":"5","click_obj":"1664909","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/131/154/4351131/a4351131_145587312820261.jpg","fav_num":"2752","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1664909\"}}"},{"id":"1796925","titlepic":"http://images.meishij.net/p/20161025/a21cbf8850f97fe2b1d04b04b628f362.jpg","title":"快速电饭锅版东坡肉","descr":"教你一个好方法，轻松做出入口即化的东坡肉","click_type":"5","click_obj":"1796925","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/72/104/4151072/a4151072_147714209609497.jpg","fav_num":"1533","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1796925\"}}"},{"id":"1796189","titlepic":"http://images.meishij.net/p/20161025/96dc249a00ec376d94639bfa01c4e2af.jpg","title":"大盘鸡","descr":"下饭当如大盘鸡，辣中有香十分美味","click_type":"5","click_obj":"1796189","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/150/78/3394650/a3394650_147698076562372.jpg","fav_num":"1226","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1796189\"}}"},{"id":"1796641","titlepic":"http://images.meishij.net/p/20161025/9687c7c5bef0214bf8e04cc0fab40418.jpg","title":"辣烤排骨","descr":"这样做可以最大程度的保留排骨内的营养成分","click_type":"5","click_obj":"1796641","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/142/116/5154142/a5154142_147712016207614.jpg","fav_num":"1010","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1796641\"}}"},{"id":"1797242","titlepic":"http://images.meishij.net/p/20161025/2e5c4b8255be58ac2f24147f321f6a49.jpg","title":"韭菜鸡蛋捞面条","descr":"天一冷，有什么能比一碗热乎乎的面更讨人欢心","click_type":"5","click_obj":"1797242","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/52/75/2268802/a2268802_147730086865352.jpg","fav_num":"1257","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1797242\"}}"},{"id":"1668485","titlepic":"http://images.meishij.net/p/20161025/95cbde0b329c7aa66059947939237e01.jpg","title":"榨菜肉丝米线","descr":"榨菜肉丝配米线，酸酸爽爽能吃一大碗","click_type":"5","click_obj":"1668485","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/115/13/2253365/a2253365_145820358353524.jpg","fav_num":"6678","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1668485\"}}"},{"id":"1791053","titlepic":"http://images.meishij.net/p/20161025/3de82e27060ceed496bc0aec809aaa99.jpg","title":"重庆小面","descr":"有精髓的小面，带你赴一场舌尖与心灵的盛宴","click_type":"5","click_obj":"1791053","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/63/134/96063/a96063_147477330374353.jpg","fav_num":"1341","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1791053\"}}"}],"san_can_titles":[{"title":"早餐","sub_title":"三种经典早餐，温暖这个寒冷的清晨","titlepic":"http://i5.meishij.net/app/mobile/guyu_icon_1.png","click_type":"0","click_obj":"","pv_trackingURL":"","click_trackingURL":""},{"title":"午餐","sub_title":"简约不简单，省时又方便","titlepic":"http://i5.meishij.net/app/mobile/guyu_icon_2.png","click_type":"0","click_obj":"","pv_trackingURL":"","click_trackingURL":""},{"title":"下午茶","sub_title":"轻轻松松玩转下午茶","titlepic":"http://i5.meishij.net/app/mobile/guyu_icon_3.png","click_type":"0","click_obj":"","pv_trackingURL":"","click_trackingURL":""},{"title":"晚餐","sub_title":"秋冬季的硬派肉菜","titlepic":"http://i5.meishij.net/app/mobile/guyu_icon_4.png","click_type":"0","click_obj":"","pv_trackingURL":"","click_trackingURL":""},{"title":"夜宵","sub_title":"哧溜一声滑入胃，夜宵就要这样吃","titlepic":"http://i5.meishij.net/app/mobile/guyu_icon_5.png","click_type":"0","click_obj":"","pv_trackingURL":"","click_trackingURL":""}],"fenlei":[{"title":"菜谱分类","image":"http://static.meishij.net/wap6/images/v6/quanbunew.png","click_type":"24","click_obj":"全部菜谱","jump":"{\"type\":\"24\",\"class_name\":\"MSCategoryController\",\"property\":{}}"},{"title":"视频菜谱","image":"http://static.meishij.net/wap6/images/v6/shipincaipunew.png","click_type":"1","click_obj":"20001","jump":"{\"type\":\"1\",\"class_name\":\"MSRecipeListController\",\"property\":{\"categoryName\":\"\",\"cTitle\":\"\\u89c6\\u9891\\u83dc\\u8c31\",\"listID\":\"20001\",\"listSt\":\"\",\"listType\":5,\"listFrom\":0}}"},{"title":"早餐","image":"http://static.meishij.net/wap6/images/v6/kuaishoucainew.png","click_type":"102","click_obj":"早餐","jump":"{\"type\":\"102\",\"class_name\":\"MSRecipeListController\",\"property\":{\"cTitle\":\"\\u65e9\\u9910\",\"listID\":\"zao\",\"listSt\":\"\\u65e9\\u9910\",\"listType\":3}}"},{"title":"附近","image":"http://static.meishij.net/wap6/images/v6/fujinnew.png","click_type":"25","click_obj":"附近","jump":"{\"type\":\"25\",\"class_name\":\"MSNearyByMapController\",\"property\":{}}"}],"func1":{"title":"最受欢迎","image":"http://static.meishij.net/wap6/images/v6/paihangbangnew.png"},"func2":{"title":"食材组菜","image":"http://static.meishij.net/wap6/images/v6/zhinengzucainew.png"},"top3":[{"photo":"http://site.meishij.net/adm/additive/2016-10-21/5809ed1392021.jpg","click_type":4,"click_obj":"美食杰;http://i.meishi.cc/g/transit.php?ename=1908&from=mobile_mobile","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"is_recipe":"0","sft":"0","aid":"568","jump":"{\"type\":\"4\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/i.meishi.cc\\/g\\/transit.php?ename=1908&from=mobile_mobile&goodsSource=1,568\",\"goodsSource\":\"1,568\"}}"},{"photo":"http://site.meishij.net/adm/additive/2016-10-26/58108c65c2a2d.jpg","click_type":4,"click_obj":"美食杰;http://i.meishi.cc/g/transit.php?ename=1940&from=mobile_mobile","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"is_recipe":"0","sft":"0","aid":"595","jump":"{\"type\":\"4\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/i.meishi.cc\\/g\\/transit.php?ename=1940&from=mobile_mobile&goodsSource=1,595\",\"goodsSource\":\"1,595\"}}"},{"photo":"http://site.meishij.net/adm/additive/2016-10-20/58089f379c47f.jpg","click_type":4,"click_obj":"美食杰;http://i.meishi.cc/g/transit.php?ename=1920&from=mobile_mobile","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"is_recipe":"0","sft":"0","aid":"561","jump":"{\"type\":\"4\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/i.meishi.cc\\/g\\/transit.php?ename=1920&from=mobile_mobile&goodsSource=1,561\",\"goodsSource\":\"1,561\"}}"},{"photo":"http://site.meishij.net/adm/additive/2016-10-26/58108e727cf03.jpg","click_type":4,"click_obj":"美食杰;http://i.meishi.cc/g/transit.php?ename=1931&from=mobile_mobile","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"is_recipe":"0","sft":"0","aid":"581","jump":"{\"type\":\"4\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/i.meishi.cc\\/g\\/transit.php?ename=1931&from=mobile_mobile&goodsSource=1,581\",\"goodsSource\":\"1,581\"}}"}],"top4":[{"photo":"http://site.meishij.net/adm/additive/2016-10-19/580749abd6771.jpg","click_type":4,"click_obj":"1019 广告部  今日推荐下方轮播横幅;http://i.meishi.cc/g/transit.php?ename=1919&from=mobile_mobile","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"is_recipe":"0","sft":"0","jump":"{\"type\":\"4\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/i.meishi.cc\\/g\\/transit.php?ename=1919&from=mobile_mobile\",\"goodsSource\":\"\"}}"},{"photo":"http://site.meishij.net/adm/additive/2016-10-25/580ebfcfa8e54.jpg","click_type":4,"click_obj":"1025 广告部 美的微波炉 今日推荐 ;http://i.meishi.cc/g/transit.php?ename=1935&from=mobile_mobile","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"is_recipe":"0","sft":"0","jump":"{\"type\":\"4\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/i.meishi.cc\\/g\\/transit.php?ename=1935&from=mobile_mobile\",\"goodsSource\":\"\"}}"},{"photo":"http://site.meishij.net/adm/additive/2016-10-25/580f0f0726089.jpg","click_type":4,"click_obj":"1025 广告部 美的AH煲  今日推荐 ;http://i.meishi.cc/g/transit.php?ename=1938&from=mobile_mobile","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"is_recipe":"0","sft":"0","jump":"{\"type\":\"4\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/i.meishi.cc\\/g\\/transit.php?ename=1938&from=mobile_mobile\",\"goodsSource\":\"\"}}"},{"photo":"http://site.meishij.net/adm/additive/2016-10-24/580dd90e8f8f2.jpg","click_type":4,"click_obj":"1021 编辑部 油温 今日推荐;http://i.meishi.cc/g/transit.php?ename=1933&from=mobile_mobile","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"is_recipe":"0","sft":"0","jump":"{\"type\":\"4\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/i.meishi.cc\\/g\\/transit.php?ename=1933&from=mobile_mobile\",\"goodsSource\":\"\"}}"}],"shops":[{"id":"5430","title":"做水煮肉和泡面一样简单","price":"11.8","guige":"1袋","image":"http://site.meishij.net/shop/uploadfile/20161008/20161008123910.jpg","goodsSource":"2,5430","jump":"{\"type\":\"10\",\"class_name\":\"MSBuyGoodsDetailController\",\"property\":{\"goodsID\":\"5430\",\"sourceContent\":\"index\",\"goodsSource\":\"2,5430\"}}"},{"id":"6517","title":"山区野生才有的香糯甜面|密农人家 农家新鲜生板栗5斤包邮","price":"68","guige":"5斤","image":"http://site.meishij.net/shop/uploadfile/20160929/20160929150744.jpg","goodsSource":"2,6517","jump":"{\"type\":\"10\",\"class_name\":\"MSBuyGoodsDetailController\",\"property\":{\"goodsID\":\"6517\",\"sourceContent\":\"index\",\"goodsSource\":\"2,6517\"}}"},{"id":"1441","title":"抓一把星光洒在盘子上","price":"9.9","guige":"1个","image":"http://site.meishij.net/shop/uploadfile/20160826/20160826170437.jpg","goodsSource":"2,1441","jump":"{\"type\":\"10\",\"class_name\":\"MSBuyGoodsDetailController\",\"property\":{\"goodsID\":\"1441\",\"sourceContent\":\"index\",\"goodsSource\":\"2,1441\"}}"},{"id":"4572","title":"双面菜板，生熟分开抗菌防滑","price":"25.8","guige":"1个","image":"http://site.meishij.net/shop/uploadfile/20161024/20161024142012.jpg","goodsSource":"2,4572","jump":"{\"type\":\"10\",\"class_name\":\"MSBuyGoodsDetailController\",\"property\":{\"goodsID\":\"4572\",\"sourceContent\":\"index\",\"goodsSource\":\"2,4572\"}}"}],"zt":[{"id":"0","title":"","type":"1","tj_type":"0","f_s_type":"http://m.meishij.net/huodong/zt.php?zt_id=291","photo":"http://images.meishij.net/p/20161026/ad86d75393b4269c4b64bbda1ed12527.jpg","descr":"","jump":"{\"type\":\"103\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/m.meishij.net\\/huodong\\/zt.php?zt_id=291\",\"goodsSource\":\"4,0\"}}"},{"id":"31","title":"","type":"1","tj_type":"0","f_s_type":"http://m.meishij.net/huodong/caidan_zt.php?id=31","photo":"http://images.meishij.net/p/20161025/3b05ef30e3ff33c7e0a8ab5f1a996325.jpg","descr":"","jump":"{\"type\":\"103\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/m.meishij.net\\/huodong\\/caidan_zt.php?id=31\",\"goodsSource\":\"4,31\"}}"},{"id":"0","title":"","type":"1","tj_type":"0","f_s_type":"http://m.meishij.net/huodong/zt.php?zt_id=285","photo":"http://images.meishij.net/p/20161024/183a03af619149c44c4d843603820102.jpg","descr":"","jump":"{\"type\":\"103\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/m.meishij.net\\/huodong\\/zt.php?zt_id=285\",\"goodsSource\":\"4,0\"}}"},{"id":"0","title":"","type":"1","tj_type":"0","f_s_type":"http://m.meishij.net/huodong/zt.php?zt_id=287","photo":"http://images.meishij.net/p/20161023/581c04734fababd8c81b4b4a90cc4721.jpg","descr":"","jump":"{\"type\":\"103\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/m.meishij.net\\/huodong\\/zt.php?zt_id=287\",\"goodsSource\":\"4,0\"}}"}],"customized":{"title":"猜你喜欢","time":"13:45为您更新","total":2,"data":[]}}
+     * code : 1
+     * obj : {"san_can":[{"id":"586695","titlepic":"http://images.meishij.net/p/20161026/6f021430be1d4d14356abde24320e56b.jpg","title":"夹心馒头片","descr":"香港西多士和中式煎馒头结合的黄金产物","click_type":"5","click_obj":"586695","pv_trackingURL":"","click_trackingURL":"","sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://images.meishij.net/p/20121130/a0c82dcfd9ce5d1b8766a5f2d28f18d2_150x150.jpg","fav_num":"1592","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"586695\"}}"},{"id":"1691748","titlepic":"http://images.meishij.net/p/20161026/04d9a240ba5cb61b2810f05df069d7f2.jpg","title":"芝士烤土司","descr":"土司中间挖个坑，变成鸡蛋和芝士的温床","click_type":"5","click_obj":"1691748","pv_trackingURL":"","click_trackingURL":"","sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/10/120/30010/a30010_146908726423573.jpg","fav_num":"6804","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1691748\"}}"},{"id":"594311","titlepic":"http://images.meishij.net/p/20161026/5cd94d754db32ff61c9735906f6f35a5.jpg","title":"万剑穿肠面","descr":"绞尽脑汁都想不到原来面条还能这么吃","click_type":"5","click_obj":"594311","pv_trackingURL":"","click_trackingURL":"","sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://images.meishij.net/p/20130626/24a3880ed3851cf383b04897664af849_150x150.jpg","fav_num":"2867","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"594311\"}}"},{"id":"1650913","titlepic":"http://images.meishij.net/p/20161026/a28d44387c99b433fcc8295631943b73.jpg","title":"红焖羊棒骨","descr":"少油小火勤搅拌，教你炒糖浆的小窍门","click_type":"5","click_obj":"1650913","pv_trackingURL":"","click_trackingURL":"","sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/72/104/4151072/a4151072_144567256084978.jpg","fav_num":"1454","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1650913\"}}"},{"id":"1681073","titlepic":"http://images.meishij.net/p/20161026/ec7d7507da4f83230ed06db7a7de999d.jpg","title":"土豆烧牛肉","descr":"土豆与牛肉的秋日恋歌，缠绵又浓烈","click_type":"5","click_obj":"1681073","pv_trackingURL":"","click_trackingURL":"","sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/163/225/2431413/a2431413_146402958358225.jpg","fav_num":"6","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1681073\"}}"},{"id":"1696962","titlepic":"http://images.meishij.net/p/20161026/17dd6d7f2f1db843c9a0bf61e61a97ae.jpg","title":"香炸藕盒","descr":"谁说吃藕丑，越吃越美越香才是正解","click_type":"5","click_obj":"1696962","pv_trackingURL":"","click_trackingURL":"","sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/69/207/2801819/a2801819_147116673342960.jpg","fav_num":"6","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1696962\"}}"},{"id":"1642177","titlepic":"http://images.meishij.net/p/20161026/0644d3c25c3beb0ab7b202a89ee45957.jpg","title":"广州肠粉","descr":"广式茶点铺抢手美味，晶莹剔透妙不可言","click_type":"5","click_obj":"1642177","pv_trackingURL":"","click_trackingURL":"","sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/151/186/1421651/a1421651_143829545889556.jpg","fav_num":"1201","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1642177\"}}"},{"id":"1640398","titlepic":"http://images.meishij.net/p/20161026/782146a2e1a86a01f136a0037cbc7f33.jpg","title":"湖南糖油粑粑","descr":"来自长沙的传统名吃，三个下肚能量恢复","click_type":"5","click_obj":"1640398","pv_trackingURL":"","click_trackingURL":"","sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/41/143/2723291/a2723291_143728550018304.jpg","fav_num":"12222","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1640398\"}}"},{"id":"1636835","titlepic":"http://images.meishij.net/p/20161026/bbe8ff924f6e7030dcfa189373f305b7.jpg","title":"咖喱鱼蛋","descr":"闽粤地区超人气小吃，香浓Q弹百吃不厌","click_type":"5","click_obj":"1636835","pv_trackingURL":"","click_trackingURL":"","sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/184/124/2468684/a2468684_143462129905900.jpg","fav_num":"490","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1636835\"}}"},{"id":"1654099","titlepic":"http://images.meishij.net/p/20161026/cef32316be0318513d0553bc479b8174.jpg","title":"鱼香肉丝","descr":"下饭菜中佼佼者，不用鱼也能做出鱼肉香","click_type":"5","click_obj":"1654099","pv_trackingURL":"","click_trackingURL":"","sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/49/144/4036049/a4036049_144729940485500.jpg","fav_num":"10503","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1654099\"}}"},{"id":"1797828","titlepic":"http://images.meishij.net/p/20161027/8397b6d219d292599b25552af795ecfe.jpg","title":"干锅鸡翅虾","descr":"荤素搭配一锅出，香辣滋味让你过足瘾","click_type":"5","click_obj":"1797828","pv_trackingURL":"","click_trackingURL":"","sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/115/102/588115/a588115_147746098699201.jpg","fav_num":"1626","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1797828\"}}"},{"id":"592373","titlepic":"http://images.meishij.net/p/20161026/2da57f002c957014d759724531cbb450.jpg","title":"家乡豆腐","descr":"一道麻辣鲜香的下饭豆腐，勾起家乡思念","click_type":"5","click_obj":"592373","pv_trackingURL":"","click_trackingURL":"","sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://images.meishij.net/p/20130506/27b91a5a3a337e4255edb84e4fb54bb0_150x150.jpg","fav_num":"41274","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"592373\"}}"},{"id":"594363","titlepic":"http://images.meishij.net/p/20161026/bb7d173b1497a72029f1de04c4d4beda.jpg","title":"孜然牙签鸡肉串","descr":"一口一个真方便，吃完还能用牙签剔剔牙","click_type":"5","click_obj":"594363","pv_trackingURL":"","click_trackingURL":"","sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://images.meishij.net/p/20130627/8ad3bea5f57ccb35e7aaa6bf9d5d9192_150x150.jpg","fav_num":"37246","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"594363\"}}"},{"id":"209282","titlepic":"http://images.meishij.net/p/20161026/91a99a6e3aabf94eb77dce62d64dd862.jpg","title":"台湾大肠包小肠","descr":"台湾十大知名小吃之一，这样做才正宗","click_type":"5","click_obj":"209282","pv_trackingURL":"","click_trackingURL":"","sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://images.meishij.net/p/20111118/7f24fce800a51d60302009bd7ca5923d_150x150.jpg","fav_num":"21217","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"209282\"}}"},{"id":"615507","titlepic":"http://images.meishij.net/p/20161026/c4738bb0e9500e392eaf0215b5528973.jpg","title":"香辣烤薯角","descr":"简单快捷的馋嘴小零食，专为懒人设计","click_type":"5","click_obj":"615507","pv_trackingURL":"","click_trackingURL":"","sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://images.meishij.net/p/20141118/e2af3ad14a6f91498ef0f6a81957b45a_150x150.jpg","fav_num":"9774","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"615507\"}}"}],"san_can_titles":[{"title":"早餐","sub_title":"今天的早餐脑洞有点大哦","titlepic":"http://i5.meishij.net/app/mobile/guyu_icon_1.png","click_type":"0","click_obj":"","pv_trackingURL":"","click_trackingURL":""},{"title":"午餐","sub_title":"在这些美味面前减肥只有靠边站了","titlepic":"http://i5.meishij.net/app/mobile/guyu_icon_2.png","click_type":"0","click_obj":"","pv_trackingURL":"","click_trackingURL":""},{"title":"下午茶","sub_title":"午后让嘴巴飞去南方度个假","titlepic":"http://i5.meishij.net/app/mobile/guyu_icon_3.png","click_type":"0","click_obj":"","pv_trackingURL":"","click_trackingURL":""},{"title":"晚餐","sub_title":"汁浓味美香气扑鼻下饭菜","titlepic":"http://i5.meishij.net/app/mobile/guyu_icon_4.png","click_type":"0","click_obj":"","pv_trackingURL":"","click_trackingURL":""},{"title":"夜宵","sub_title":"用美食赶走一周的辛苦","titlepic":"http://i5.meishij.net/app/mobile/guyu_icon_5.png","click_type":"0","click_obj":"","pv_trackingURL":"","click_trackingURL":""}],"fenlei":[{"title":"菜谱分类","image":"http://static.meishij.net/wap6/images/v6/quanbu.png","click_type":"24","click_obj":"全部菜谱","jump":"{\"type\":\"24\",\"class_name\":\"MSCategoryController\",\"property\":{}}"},{"title":"视频菜谱","image":"http://static.meishij.net/wap6/images/v6/shipincaipu.png","click_type":"1","click_obj":"20001","jump":"{\"type\":\"1\",\"class_name\":\"MSRecipeListController\",\"property\":{\"categoryName\":\"\",\"cTitle\":\"\\u89c6\\u9891\\u83dc\\u8c31\",\"listID\":\"20001\",\"listSt\":\"\",\"listType\":5,\"listFrom\":0}}"},{"title":"早餐","image":"http://static.meishij.net/wap6/images/v6/kuaishoucai.png","click_type":"102","click_obj":"早餐","jump":"{\"type\":\"102\",\"class_name\":\"MSRecipeListController\",\"property\":{\"cTitle\":\"\\u65e9\\u9910\",\"listID\":\"zao\",\"listSt\":\"\\u65e9\\u9910\",\"listType\":3}}"},{"title":"附近","image":"http://static.meishij.net/wap6/images/v6/fujin.png","click_type":"25","click_obj":"附近","jump":"{\"type\":\"25\",\"class_name\":\"MSNearyByMapController\",\"property\":{}}"}],"func1":{"title":"最受欢迎","image":"http://static.meishij.net/wap6/images/v6/paihangbang.png"},"func2":{"title":"食材组菜","image":"http://static.meishij.net/wap6/images/v6/zhinengzucai.png"},"top3":[{"photo":"http://site.meishij.net/adm/additive/2016-10-28/5812aa3cccec3.jpg","click_type":4,"click_obj":"五谷-推荐;http://i.meishi.cc/g/transit.php?ename=1948&from=mobile_mobile","pv_trackingURL":"","click_trackingURL":"","is_recipe":"0","sft":"0","jump":"{\"type\":\"4\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/i.meishi.cc\\/g\\/transit.php?ename=1948&from=mobile_mobile\",\"goodsSource\":\"\"}}"},{"photo":"http://site.meishij.net/adm/additive/2016-10-26/5810890c05e29.jpg","click_type":4,"click_obj":"锅具-推荐;http://i.meishi.cc/g/transit.php?ename=1940&from=mobile_mobile","pv_trackingURL":"","click_trackingURL":"","is_recipe":"0","sft":"0","jump":"{\"type\":\"4\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/i.meishi.cc\\/g\\/transit.php?ename=1940&from=mobile_mobile\",\"goodsSource\":\"\"}}"},{"photo":"http://site.meishij.net/adm/additive/2016-10-20/58089f437a4c7.jpg","click_type":4,"click_obj":"潘苹果-推荐;http://i.meishi.cc/g/transit.php?ename=1920&from=mobile_mobile","pv_trackingURL":"","click_trackingURL":"","is_recipe":"0","sft":"0","jump":"{\"type\":\"4\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/i.meishi.cc\\/g\\/transit.php?ename=1920&from=mobile_mobile\",\"goodsSource\":\"\"}}"},{"photo":"http://site.meishij.net/adm/additive/2016-10-27/5811a583a844b.png","click_type":4,"click_obj":"七周年  1025 编辑部 最热商品下方轮播横幅;http://i.meishi.cc/g/transit.php?ename=1934&from=mobile_mobile","pv_trackingURL":"","click_trackingURL":"","is_recipe":"0","sft":"0","jump":"{\"type\":\"4\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/i.meishi.cc\\/g\\/transit.php?ename=1934&from=mobile_mobile\",\"goodsSource\":\"\"}}"}],"top4":[{"photo":"http://site.meishij.net/adm/additive/2016-10-19/580749abd6771.jpg","click_type":4,"click_obj":"1019 广告部  今日推荐下方轮播横幅;http://i.meishi.cc/g/transit.php?ename=1919&from=mobile_mobile","pv_trackingURL":"","click_trackingURL":"","is_recipe":"0","sft":"0","jump":"{\"type\":\"4\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/i.meishi.cc\\/g\\/transit.php?ename=1919&from=mobile_mobile\",\"goodsSource\":\"\"}}"},{"photo":"http://site.meishij.net/adm/additive/2016-10-25/580f0f0726089.jpg","click_type":4,"click_obj":"1025 广告部 美的AH煲  今日推荐 ;http://i.meishi.cc/g/transit.php?ename=1938&from=mobile_mobile","pv_trackingURL":"","click_trackingURL":"","is_recipe":"0","sft":"0","jump":"{\"type\":\"4\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/i.meishi.cc\\/g\\/transit.php?ename=1938&from=mobile_mobile\",\"goodsSource\":\"\"}}"},{"photo":"http://site.meishij.net/adm/additive/2016-10-24/580dd90e8f8f2.jpg","click_type":4,"click_obj":"1021 编辑部 油温 今日推荐;http://i.meishi.cc/g/transit.php?ename=1933&from=mobile_mobile","pv_trackingURL":"","click_trackingURL":"","is_recipe":"0","sft":"0","jump":"{\"type\":\"4\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/i.meishi.cc\\/g\\/transit.php?ename=1933&from=mobile_mobile\",\"goodsSource\":\"\"}}"},{"photo":"http://static.meishij.net/images/get3/adscroll/adscroll_baikuanmifan.jpg","click_type":"5","click_obj":"1639954","pv_trackingURL":"","click_trackingURL":"","is_recipe":"0","sft":"0","jump":"{\"type\":\"51\",\"class_name\":\"MSArticleDetailController\",\"property\":{\"recipeId\":\"1639954\",\"goodsSource\":\"\"}}"},{"photo":"http://static.meishij.net/images/get3/adscroll/adscroll_banchengpin.jpg","click_type":"5","click_obj":"1636964","pv_trackingURL":"","click_trackingURL":"","is_recipe":"0","sft":"0","jump":"{\"type\":\"51\",\"class_name\":\"MSArticleDetailController\",\"property\":{\"recipeId\":\"1636964\",\"goodsSource\":\"\"}}"}],"shops":[{"id":"7067","title":"能当乒乓球的手打牛肉丸","price":"56.9","guige":"2包","image":"http://site.meishij.net/shop/uploadfile/20161012/20161012180559.jpg","jump":"{\"type\":\"10\",\"class_name\":\"MSBuyGoodsDetailController\",\"property\":{\"goodsID\":\"7067\",\"sourceContent\":\"index\",\"goodsSource\":\"\"}}"},{"id":"1525","title":"高活性酵母让馒头更松软","price":"9.9","guige":"10g*10","image":"http://site.meishij.net/shop/uploadfile/20161024/20161024141629.jpg","jump":"{\"type\":\"10\",\"class_name\":\"MSBuyGoodsDetailController\",\"property\":{\"goodsID\":\"1525\",\"sourceContent\":\"index\",\"goodsSource\":\"\"}}"},{"id":"1090","title":"炒菜只用几滴油","price":"148","guige":"1件","image":"http://site.meishij.net/shop/uploadfile/20161014/20161014113133.jpg","jump":"{\"type\":\"10\",\"class_name\":\"MSBuyGoodsDetailController\",\"property\":{\"goodsID\":\"1090\",\"sourceContent\":\"index\",\"goodsSource\":\"\"}}"},{"id":"5241","title":"传承几代人的腊肠手艺","price":"39.9","guige":"1袋","image":"http://site.meishij.net/shop/uploadfile/20161008/20161008123830.jpg","jump":"{\"type\":\"10\",\"class_name\":\"MSBuyGoodsDetailController\",\"property\":{\"goodsID\":\"5241\",\"sourceContent\":\"index\",\"goodsSource\":\"\"}}"}],"zt":[{"id":"0","title":"","type":"1","tj_type":"0","f_s_type":"http://m.meishij.net/huodong/zt.php?zt_id=293","photo":"http://images.meishij.net/p/20161027/64cb21b941d7b3802cdb261a57ebc502.jpg","descr":"","jump":"{\"type\":\"103\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/m.meishij.net\\/huodong\\/zt.php?zt_id=293\",\"goodsSource\":\"\"}}"},{"id":"0","title":"","type":"1","tj_type":"0","f_s_type":"http://m.meishij.net/huodong/zt.php?zt_id=291","photo":"http://images.meishij.net/p/20161026/ad86d75393b4269c4b64bbda1ed12527.jpg","descr":"","jump":"{\"type\":\"103\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/m.meishij.net\\/huodong\\/zt.php?zt_id=291\",\"goodsSource\":\"\"}}"},{"id":"31","title":"","type":"1","tj_type":"0","f_s_type":"http://m.meishij.net/huodong/caidan_zt.php?id=31","photo":"http://images.meishij.net/p/20161025/3b05ef30e3ff33c7e0a8ab5f1a996325.jpg","descr":"","jump":"{\"type\":\"103\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/m.meishij.net\\/huodong\\/caidan_zt.php?id=31\",\"goodsSource\":\"\"}}"},{"id":"0","title":"","type":"1","tj_type":"0","f_s_type":"http://m.meishij.net/huodong/zt.php?zt_id=285","photo":"http://images.meishij.net/p/20161024/183a03af619149c44c4d843603820102.jpg","descr":"","jump":"{\"type\":\"103\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/m.meishij.net\\/huodong\\/zt.php?zt_id=285\",\"goodsSource\":\"\"}}"}],"customized":{"title":"猜你喜欢","time":"10:58为您更新","total":4,"data":[]},"browser":{"refer":"http://www.meishij.net/chufang/diy/recaipu/58971.html","agent":"Mozilla/5.0 (Windows NT 6.1) .NET CLRMSN AppleWebKit/617.40 (KHTML, like Gecko) Maxthon/9.2.1.5051 Chrome/30.0.1394.101 Safari/272.80","url":"http://www.meishij.net/zuofa/hongzaoyinertang_7.html"}}
      */
 
     private String code;
     /**
-     * san_can : [{"id":"1639649","titlepic":"http://images.meishij.net/p/20161025/583cb0e101d16639c5e42611cc7f6bfa.jpg","title":"粢饭团","descr":"总是豆浆配油条，这简直是小看了油条","click_type":"5","click_obj":"1639649","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/94/48/4324594/a4324594_143671336859266.jpg","fav_num":"557","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1639649\"}}"},{"id":"1656027","titlepic":"http://images.meishij.net/p/20161025/8a290cfe7ba5724706d0d8ec4ef9c6e4.jpg","title":"焦脆三鲜锅贴","descr":"同样的用料不一样的口感，每一口都回味无穷","click_type":"5","click_obj":"1656027","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/184/180/4420184/a4420184_144886212019012.jpg","fav_num":"11849","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1656027\"}}"},{"id":"613012","titlepic":"http://images.meishij.net/p/20161025/a08027821c0333c7557c6c59f0f0702c.jpg","title":"红油豆腐脑","descr":"麻辣嫩滑的豆腐脑才是开胃暖身的利器！","click_type":"5","click_obj":"613012","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/208/36/1259208/a1259208_90184.jpg","fav_num":"6036","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"613012\"}}"},{"id":"1796628","titlepic":"http://images.meishij.net/p/20161025/190291eb73a75aef190c04932ac37234.jpg","title":"烤肉末茄子","descr":"茄子吃进肉的香气，健康烹饪轻松光盘","click_type":"5","click_obj":"1796628","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/139/60/2827639/a2827639_147712814571279.jpg","fav_num":"1630","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1796628\"}}"},{"id":"1797086","titlepic":"http://images.meishij.net/p/20161025/c9e08393d972e10e966a15c8ba386fd5.jpg","title":"糖醋藕丁","descr":"万用糖醋汁可以做很多菜，让藕丁变得超级下饭","click_type":"5","click_obj":"1797086","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/33/132/95533/a95533_147723460179590.jpg","fav_num":"1750","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1797086\"}}"},{"id":"1797003","titlepic":"http://images.meishij.net/p/20161025/53863500bfae11491cdb2702352133aa.jpg","title":"绝味蒜泥鸡蛋","descr":"停不下筷子的蒜泥鸡蛋，墙裂推荐大家试一试","click_type":"5","click_obj":"1797003","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/52/75/2268802/a2268802_147728216001779.jpg","fav_num":"1448","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1797003\"}}"},{"id":"1797073","titlepic":"http://images.meishij.net/p/20161025/714824d2bcebbdd7776e03f38542e22d.jpg","title":"简易DIY糖葫芦","descr":"又是一年山楂季，将一串串酸甜的好味道封存","click_type":"5","click_obj":"1797073","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/223/222/4055723/a4055723_147729053111306.jpg","fav_num":"1243","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1797073\"}}"},{"id":"1796944","titlepic":"http://images.meishij.net/p/20161025/6dc78b2977e7d49aac76611674831bf5.jpg","title":"\u201c冰淇淋\u201d面包筒","descr":"天冷想吃冰淇淋，别任性啦，吃个神似的解馋吧","click_type":"5","click_obj":"1796944","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/108/183/358358/a358358_147727914277009.jpg","fav_num":"6","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1796944\"}}"},{"id":"1664909","titlepic":"http://images.meishij.net/p/20161025/bb4912f45abbbf4edfc76fd8c5e49096.jpg","title":"牛奶炖蛋","descr":"适合一家大小食用的甜品，制作简单营养满满","click_type":"5","click_obj":"1664909","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/131/154/4351131/a4351131_145587312820261.jpg","fav_num":"2752","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1664909\"}}"},{"id":"1796925","titlepic":"http://images.meishij.net/p/20161025/a21cbf8850f97fe2b1d04b04b628f362.jpg","title":"快速电饭锅版东坡肉","descr":"教你一个好方法，轻松做出入口即化的东坡肉","click_type":"5","click_obj":"1796925","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/72/104/4151072/a4151072_147714209609497.jpg","fav_num":"1533","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1796925\"}}"},{"id":"1796189","titlepic":"http://images.meishij.net/p/20161025/96dc249a00ec376d94639bfa01c4e2af.jpg","title":"大盘鸡","descr":"下饭当如大盘鸡，辣中有香十分美味","click_type":"5","click_obj":"1796189","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/150/78/3394650/a3394650_147698076562372.jpg","fav_num":"1226","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1796189\"}}"},{"id":"1796641","titlepic":"http://images.meishij.net/p/20161025/9687c7c5bef0214bf8e04cc0fab40418.jpg","title":"辣烤排骨","descr":"这样做可以最大程度的保留排骨内的营养成分","click_type":"5","click_obj":"1796641","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/142/116/5154142/a5154142_147712016207614.jpg","fav_num":"1010","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1796641\"}}"},{"id":"1797242","titlepic":"http://images.meishij.net/p/20161025/2e5c4b8255be58ac2f24147f321f6a49.jpg","title":"韭菜鸡蛋捞面条","descr":"天一冷，有什么能比一碗热乎乎的面更讨人欢心","click_type":"5","click_obj":"1797242","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/52/75/2268802/a2268802_147730086865352.jpg","fav_num":"1257","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1797242\"}}"},{"id":"1668485","titlepic":"http://images.meishij.net/p/20161025/95cbde0b329c7aa66059947939237e01.jpg","title":"榨菜肉丝米线","descr":"榨菜肉丝配米线，酸酸爽爽能吃一大碗","click_type":"5","click_obj":"1668485","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/115/13/2253365/a2253365_145820358353524.jpg","fav_num":"6678","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1668485\"}}"},{"id":"1791053","titlepic":"http://images.meishij.net/p/20161025/3de82e27060ceed496bc0aec809aaa99.jpg","title":"重庆小面","descr":"有精髓的小面，带你赴一场舌尖与心灵的盛宴","click_type":"5","click_obj":"1791053","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/63/134/96063/a96063_147477330374353.jpg","fav_num":"1341","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1791053\"}}"}]
-     * san_can_titles : [{"title":"早餐","sub_title":"三种经典早餐，温暖这个寒冷的清晨","titlepic":"http://i5.meishij.net/app/mobile/guyu_icon_1.png","click_type":"0","click_obj":"","pv_trackingURL":"","click_trackingURL":""},{"title":"午餐","sub_title":"简约不简单，省时又方便","titlepic":"http://i5.meishij.net/app/mobile/guyu_icon_2.png","click_type":"0","click_obj":"","pv_trackingURL":"","click_trackingURL":""},{"title":"下午茶","sub_title":"轻轻松松玩转下午茶","titlepic":"http://i5.meishij.net/app/mobile/guyu_icon_3.png","click_type":"0","click_obj":"","pv_trackingURL":"","click_trackingURL":""},{"title":"晚餐","sub_title":"秋冬季的硬派肉菜","titlepic":"http://i5.meishij.net/app/mobile/guyu_icon_4.png","click_type":"0","click_obj":"","pv_trackingURL":"","click_trackingURL":""},{"title":"夜宵","sub_title":"哧溜一声滑入胃，夜宵就要这样吃","titlepic":"http://i5.meishij.net/app/mobile/guyu_icon_5.png","click_type":"0","click_obj":"","pv_trackingURL":"","click_trackingURL":""}]
-     * fenlei : [{"title":"菜谱分类","image":"http://static.meishij.net/wap6/images/v6/quanbunew.png","click_type":"24","click_obj":"全部菜谱","jump":"{\"type\":\"24\",\"class_name\":\"MSCategoryController\",\"property\":{}}"},{"title":"视频菜谱","image":"http://static.meishij.net/wap6/images/v6/shipincaipunew.png","click_type":"1","click_obj":"20001","jump":"{\"type\":\"1\",\"class_name\":\"MSRecipeListController\",\"property\":{\"categoryName\":\"\",\"cTitle\":\"\\u89c6\\u9891\\u83dc\\u8c31\",\"listID\":\"20001\",\"listSt\":\"\",\"listType\":5,\"listFrom\":0}}"},{"title":"早餐","image":"http://static.meishij.net/wap6/images/v6/kuaishoucainew.png","click_type":"102","click_obj":"早餐","jump":"{\"type\":\"102\",\"class_name\":\"MSRecipeListController\",\"property\":{\"cTitle\":\"\\u65e9\\u9910\",\"listID\":\"zao\",\"listSt\":\"\\u65e9\\u9910\",\"listType\":3}}"},{"title":"附近","image":"http://static.meishij.net/wap6/images/v6/fujinnew.png","click_type":"25","click_obj":"附近","jump":"{\"type\":\"25\",\"class_name\":\"MSNearyByMapController\",\"property\":{}}"}]
-     * func1 : {"title":"最受欢迎","image":"http://static.meishij.net/wap6/images/v6/paihangbangnew.png"}
-     * func2 : {"title":"食材组菜","image":"http://static.meishij.net/wap6/images/v6/zhinengzucainew.png"}
-     * top3 : [{"photo":"http://site.meishij.net/adm/additive/2016-10-21/5809ed1392021.jpg","click_type":4,"click_obj":"美食杰;http://i.meishi.cc/g/transit.php?ename=1908&from=mobile_mobile","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"is_recipe":"0","sft":"0","aid":"568","jump":"{\"type\":\"4\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/i.meishi.cc\\/g\\/transit.php?ename=1908&from=mobile_mobile&goodsSource=1,568\",\"goodsSource\":\"1,568\"}}"},{"photo":"http://site.meishij.net/adm/additive/2016-10-26/58108c65c2a2d.jpg","click_type":4,"click_obj":"美食杰;http://i.meishi.cc/g/transit.php?ename=1940&from=mobile_mobile","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"is_recipe":"0","sft":"0","aid":"595","jump":"{\"type\":\"4\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/i.meishi.cc\\/g\\/transit.php?ename=1940&from=mobile_mobile&goodsSource=1,595\",\"goodsSource\":\"1,595\"}}"},{"photo":"http://site.meishij.net/adm/additive/2016-10-20/58089f379c47f.jpg","click_type":4,"click_obj":"美食杰;http://i.meishi.cc/g/transit.php?ename=1920&from=mobile_mobile","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"is_recipe":"0","sft":"0","aid":"561","jump":"{\"type\":\"4\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/i.meishi.cc\\/g\\/transit.php?ename=1920&from=mobile_mobile&goodsSource=1,561\",\"goodsSource\":\"1,561\"}}"},{"photo":"http://site.meishij.net/adm/additive/2016-10-26/58108e727cf03.jpg","click_type":4,"click_obj":"美食杰;http://i.meishi.cc/g/transit.php?ename=1931&from=mobile_mobile","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"is_recipe":"0","sft":"0","aid":"581","jump":"{\"type\":\"4\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/i.meishi.cc\\/g\\/transit.php?ename=1931&from=mobile_mobile&goodsSource=1,581\",\"goodsSource\":\"1,581\"}}"}]
-     * top4 : [{"photo":"http://site.meishij.net/adm/additive/2016-10-19/580749abd6771.jpg","click_type":4,"click_obj":"1019 广告部  今日推荐下方轮播横幅;http://i.meishi.cc/g/transit.php?ename=1919&from=mobile_mobile","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"is_recipe":"0","sft":"0","jump":"{\"type\":\"4\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/i.meishi.cc\\/g\\/transit.php?ename=1919&from=mobile_mobile\",\"goodsSource\":\"\"}}"},{"photo":"http://site.meishij.net/adm/additive/2016-10-25/580ebfcfa8e54.jpg","click_type":4,"click_obj":"1025 广告部 美的微波炉 今日推荐 ;http://i.meishi.cc/g/transit.php?ename=1935&from=mobile_mobile","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"is_recipe":"0","sft":"0","jump":"{\"type\":\"4\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/i.meishi.cc\\/g\\/transit.php?ename=1935&from=mobile_mobile\",\"goodsSource\":\"\"}}"},{"photo":"http://site.meishij.net/adm/additive/2016-10-25/580f0f0726089.jpg","click_type":4,"click_obj":"1025 广告部 美的AH煲  今日推荐 ;http://i.meishi.cc/g/transit.php?ename=1938&from=mobile_mobile","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"is_recipe":"0","sft":"0","jump":"{\"type\":\"4\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/i.meishi.cc\\/g\\/transit.php?ename=1938&from=mobile_mobile\",\"goodsSource\":\"\"}}"},{"photo":"http://site.meishij.net/adm/additive/2016-10-24/580dd90e8f8f2.jpg","click_type":4,"click_obj":"1021 编辑部 油温 今日推荐;http://i.meishi.cc/g/transit.php?ename=1933&from=mobile_mobile","pv_trackingURL":"","click_trackingURL":"","imp_urls":[],"click_urls":[],"is_recipe":"0","sft":"0","jump":"{\"type\":\"4\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/i.meishi.cc\\/g\\/transit.php?ename=1933&from=mobile_mobile\",\"goodsSource\":\"\"}}"}]
-     * shops : [{"id":"5430","title":"做水煮肉和泡面一样简单","price":"11.8","guige":"1袋","image":"http://site.meishij.net/shop/uploadfile/20161008/20161008123910.jpg","goodsSource":"2,5430","jump":"{\"type\":\"10\",\"class_name\":\"MSBuyGoodsDetailController\",\"property\":{\"goodsID\":\"5430\",\"sourceContent\":\"index\",\"goodsSource\":\"2,5430\"}}"},{"id":"6517","title":"山区野生才有的香糯甜面|密农人家 农家新鲜生板栗5斤包邮","price":"68","guige":"5斤","image":"http://site.meishij.net/shop/uploadfile/20160929/20160929150744.jpg","goodsSource":"2,6517","jump":"{\"type\":\"10\",\"class_name\":\"MSBuyGoodsDetailController\",\"property\":{\"goodsID\":\"6517\",\"sourceContent\":\"index\",\"goodsSource\":\"2,6517\"}}"},{"id":"1441","title":"抓一把星光洒在盘子上","price":"9.9","guige":"1个","image":"http://site.meishij.net/shop/uploadfile/20160826/20160826170437.jpg","goodsSource":"2,1441","jump":"{\"type\":\"10\",\"class_name\":\"MSBuyGoodsDetailController\",\"property\":{\"goodsID\":\"1441\",\"sourceContent\":\"index\",\"goodsSource\":\"2,1441\"}}"},{"id":"4572","title":"双面菜板，生熟分开抗菌防滑","price":"25.8","guige":"1个","image":"http://site.meishij.net/shop/uploadfile/20161024/20161024142012.jpg","goodsSource":"2,4572","jump":"{\"type\":\"10\",\"class_name\":\"MSBuyGoodsDetailController\",\"property\":{\"goodsID\":\"4572\",\"sourceContent\":\"index\",\"goodsSource\":\"2,4572\"}}"}]
-     * zt : [{"id":"0","title":"","type":"1","tj_type":"0","f_s_type":"http://m.meishij.net/huodong/zt.php?zt_id=291","photo":"http://images.meishij.net/p/20161026/ad86d75393b4269c4b64bbda1ed12527.jpg","descr":"","jump":"{\"type\":\"103\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/m.meishij.net\\/huodong\\/zt.php?zt_id=291\",\"goodsSource\":\"4,0\"}}"},{"id":"31","title":"","type":"1","tj_type":"0","f_s_type":"http://m.meishij.net/huodong/caidan_zt.php?id=31","photo":"http://images.meishij.net/p/20161025/3b05ef30e3ff33c7e0a8ab5f1a996325.jpg","descr":"","jump":"{\"type\":\"103\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/m.meishij.net\\/huodong\\/caidan_zt.php?id=31\",\"goodsSource\":\"4,31\"}}"},{"id":"0","title":"","type":"1","tj_type":"0","f_s_type":"http://m.meishij.net/huodong/zt.php?zt_id=285","photo":"http://images.meishij.net/p/20161024/183a03af619149c44c4d843603820102.jpg","descr":"","jump":"{\"type\":\"103\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/m.meishij.net\\/huodong\\/zt.php?zt_id=285\",\"goodsSource\":\"4,0\"}}"},{"id":"0","title":"","type":"1","tj_type":"0","f_s_type":"http://m.meishij.net/huodong/zt.php?zt_id=287","photo":"http://images.meishij.net/p/20161023/581c04734fababd8c81b4b4a90cc4721.jpg","descr":"","jump":"{\"type\":\"103\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/m.meishij.net\\/huodong\\/zt.php?zt_id=287\",\"goodsSource\":\"4,0\"}}"}]
-     * customized : {"title":"猜你喜欢","time":"13:45为您更新","total":2,"data":[]}
+     * san_can : [{"id":"586695","titlepic":"http://images.meishij.net/p/20161026/6f021430be1d4d14356abde24320e56b.jpg","title":"夹心馒头片","descr":"香港西多士和中式煎馒头结合的黄金产物","click_type":"5","click_obj":"586695","pv_trackingURL":"","click_trackingURL":"","sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://images.meishij.net/p/20121130/a0c82dcfd9ce5d1b8766a5f2d28f18d2_150x150.jpg","fav_num":"1592","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"586695\"}}"},{"id":"1691748","titlepic":"http://images.meishij.net/p/20161026/04d9a240ba5cb61b2810f05df069d7f2.jpg","title":"芝士烤土司","descr":"土司中间挖个坑，变成鸡蛋和芝士的温床","click_type":"5","click_obj":"1691748","pv_trackingURL":"","click_trackingURL":"","sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/10/120/30010/a30010_146908726423573.jpg","fav_num":"6804","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1691748\"}}"},{"id":"594311","titlepic":"http://images.meishij.net/p/20161026/5cd94d754db32ff61c9735906f6f35a5.jpg","title":"万剑穿肠面","descr":"绞尽脑汁都想不到原来面条还能这么吃","click_type":"5","click_obj":"594311","pv_trackingURL":"","click_trackingURL":"","sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://images.meishij.net/p/20130626/24a3880ed3851cf383b04897664af849_150x150.jpg","fav_num":"2867","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"594311\"}}"},{"id":"1650913","titlepic":"http://images.meishij.net/p/20161026/a28d44387c99b433fcc8295631943b73.jpg","title":"红焖羊棒骨","descr":"少油小火勤搅拌，教你炒糖浆的小窍门","click_type":"5","click_obj":"1650913","pv_trackingURL":"","click_trackingURL":"","sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/72/104/4151072/a4151072_144567256084978.jpg","fav_num":"1454","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1650913\"}}"},{"id":"1681073","titlepic":"http://images.meishij.net/p/20161026/ec7d7507da4f83230ed06db7a7de999d.jpg","title":"土豆烧牛肉","descr":"土豆与牛肉的秋日恋歌，缠绵又浓烈","click_type":"5","click_obj":"1681073","pv_trackingURL":"","click_trackingURL":"","sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/163/225/2431413/a2431413_146402958358225.jpg","fav_num":"6","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1681073\"}}"},{"id":"1696962","titlepic":"http://images.meishij.net/p/20161026/17dd6d7f2f1db843c9a0bf61e61a97ae.jpg","title":"香炸藕盒","descr":"谁说吃藕丑，越吃越美越香才是正解","click_type":"5","click_obj":"1696962","pv_trackingURL":"","click_trackingURL":"","sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/69/207/2801819/a2801819_147116673342960.jpg","fav_num":"6","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1696962\"}}"},{"id":"1642177","titlepic":"http://images.meishij.net/p/20161026/0644d3c25c3beb0ab7b202a89ee45957.jpg","title":"广州肠粉","descr":"广式茶点铺抢手美味，晶莹剔透妙不可言","click_type":"5","click_obj":"1642177","pv_trackingURL":"","click_trackingURL":"","sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/151/186/1421651/a1421651_143829545889556.jpg","fav_num":"1201","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1642177\"}}"},{"id":"1640398","titlepic":"http://images.meishij.net/p/20161026/782146a2e1a86a01f136a0037cbc7f33.jpg","title":"湖南糖油粑粑","descr":"来自长沙的传统名吃，三个下肚能量恢复","click_type":"5","click_obj":"1640398","pv_trackingURL":"","click_trackingURL":"","sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/41/143/2723291/a2723291_143728550018304.jpg","fav_num":"12222","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1640398\"}}"},{"id":"1636835","titlepic":"http://images.meishij.net/p/20161026/bbe8ff924f6e7030dcfa189373f305b7.jpg","title":"咖喱鱼蛋","descr":"闽粤地区超人气小吃，香浓Q弹百吃不厌","click_type":"5","click_obj":"1636835","pv_trackingURL":"","click_trackingURL":"","sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/184/124/2468684/a2468684_143462129905900.jpg","fav_num":"490","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1636835\"}}"},{"id":"1654099","titlepic":"http://images.meishij.net/p/20161026/cef32316be0318513d0553bc479b8174.jpg","title":"鱼香肉丝","descr":"下饭菜中佼佼者，不用鱼也能做出鱼肉香","click_type":"5","click_obj":"1654099","pv_trackingURL":"","click_trackingURL":"","sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/49/144/4036049/a4036049_144729940485500.jpg","fav_num":"10503","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1654099\"}}"},{"id":"1797828","titlepic":"http://images.meishij.net/p/20161027/8397b6d219d292599b25552af795ecfe.jpg","title":"干锅鸡翅虾","descr":"荤素搭配一锅出，香辣滋味让你过足瘾","click_type":"5","click_obj":"1797828","pv_trackingURL":"","click_trackingURL":"","sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://site.meishij.net/r/115/102/588115/a588115_147746098699201.jpg","fav_num":"1626","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"1797828\"}}"},{"id":"592373","titlepic":"http://images.meishij.net/p/20161026/2da57f002c957014d759724531cbb450.jpg","title":"家乡豆腐","descr":"一道麻辣鲜香的下饭豆腐，勾起家乡思念","click_type":"5","click_obj":"592373","pv_trackingURL":"","click_trackingURL":"","sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://images.meishij.net/p/20130506/27b91a5a3a337e4255edb84e4fb54bb0_150x150.jpg","fav_num":"41274","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"592373\"}}"},{"id":"594363","titlepic":"http://images.meishij.net/p/20161026/bb7d173b1497a72029f1de04c4d4beda.jpg","title":"孜然牙签鸡肉串","descr":"一口一个真方便，吃完还能用牙签剔剔牙","click_type":"5","click_obj":"594363","pv_trackingURL":"","click_trackingURL":"","sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://images.meishij.net/p/20130627/8ad3bea5f57ccb35e7aaa6bf9d5d9192_150x150.jpg","fav_num":"37246","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"594363\"}}"},{"id":"209282","titlepic":"http://images.meishij.net/p/20161026/91a99a6e3aabf94eb77dce62d64dd862.jpg","title":"台湾大肠包小肠","descr":"台湾十大知名小吃之一，这样做才正宗","click_type":"5","click_obj":"209282","pv_trackingURL":"","click_trackingURL":"","sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://images.meishij.net/p/20111118/7f24fce800a51d60302009bd7ca5923d_150x150.jpg","fav_num":"21217","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"209282\"}}"},{"id":"615507","titlepic":"http://images.meishij.net/p/20161026/c4738bb0e9500e392eaf0215b5528973.jpg","title":"香辣烤薯角","descr":"简单快捷的馋嘴小零食，专为懒人设计","click_type":"5","click_obj":"615507","pv_trackingURL":"","click_trackingURL":"","sft":"0","is_recipe":"1","is_tj":"1","tj_img":"http://images.meishij.net/p/20141118/e2af3ad14a6f91498ef0f6a81957b45a_150x150.jpg","fav_num":"9774","jump":"{\"type\":\"5\",\"class_name\":\"MSRecipeDetailController\",\"property\":{\"recipeId\":\"615507\"}}"}]
+     * san_can_titles : [{"title":"早餐","sub_title":"今天的早餐脑洞有点大哦","titlepic":"http://i5.meishij.net/app/mobile/guyu_icon_1.png","click_type":"0","click_obj":"","pv_trackingURL":"","click_trackingURL":""},{"title":"午餐","sub_title":"在这些美味面前减肥只有靠边站了","titlepic":"http://i5.meishij.net/app/mobile/guyu_icon_2.png","click_type":"0","click_obj":"","pv_trackingURL":"","click_trackingURL":""},{"title":"下午茶","sub_title":"午后让嘴巴飞去南方度个假","titlepic":"http://i5.meishij.net/app/mobile/guyu_icon_3.png","click_type":"0","click_obj":"","pv_trackingURL":"","click_trackingURL":""},{"title":"晚餐","sub_title":"汁浓味美香气扑鼻下饭菜","titlepic":"http://i5.meishij.net/app/mobile/guyu_icon_4.png","click_type":"0","click_obj":"","pv_trackingURL":"","click_trackingURL":""},{"title":"夜宵","sub_title":"用美食赶走一周的辛苦","titlepic":"http://i5.meishij.net/app/mobile/guyu_icon_5.png","click_type":"0","click_obj":"","pv_trackingURL":"","click_trackingURL":""}]
+     * fenlei : [{"title":"菜谱分类","image":"http://static.meishij.net/wap6/images/v6/quanbu.png","click_type":"24","click_obj":"全部菜谱","jump":"{\"type\":\"24\",\"class_name\":\"MSCategoryController\",\"property\":{}}"},{"title":"视频菜谱","image":"http://static.meishij.net/wap6/images/v6/shipincaipu.png","click_type":"1","click_obj":"20001","jump":"{\"type\":\"1\",\"class_name\":\"MSRecipeListController\",\"property\":{\"categoryName\":\"\",\"cTitle\":\"\\u89c6\\u9891\\u83dc\\u8c31\",\"listID\":\"20001\",\"listSt\":\"\",\"listType\":5,\"listFrom\":0}}"},{"title":"早餐","image":"http://static.meishij.net/wap6/images/v6/kuaishoucai.png","click_type":"102","click_obj":"早餐","jump":"{\"type\":\"102\",\"class_name\":\"MSRecipeListController\",\"property\":{\"cTitle\":\"\\u65e9\\u9910\",\"listID\":\"zao\",\"listSt\":\"\\u65e9\\u9910\",\"listType\":3}}"},{"title":"附近","image":"http://static.meishij.net/wap6/images/v6/fujin.png","click_type":"25","click_obj":"附近","jump":"{\"type\":\"25\",\"class_name\":\"MSNearyByMapController\",\"property\":{}}"}]
+     * func1 : {"title":"最受欢迎","image":"http://static.meishij.net/wap6/images/v6/paihangbang.png"}
+     * func2 : {"title":"食材组菜","image":"http://static.meishij.net/wap6/images/v6/zhinengzucai.png"}
+     * top3 : [{"photo":"http://site.meishij.net/adm/additive/2016-10-28/5812aa3cccec3.jpg","click_type":4,"click_obj":"五谷-推荐;http://i.meishi.cc/g/transit.php?ename=1948&from=mobile_mobile","pv_trackingURL":"","click_trackingURL":"","is_recipe":"0","sft":"0","jump":"{\"type\":\"4\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/i.meishi.cc\\/g\\/transit.php?ename=1948&from=mobile_mobile\",\"goodsSource\":\"\"}}"},{"photo":"http://site.meishij.net/adm/additive/2016-10-26/5810890c05e29.jpg","click_type":4,"click_obj":"锅具-推荐;http://i.meishi.cc/g/transit.php?ename=1940&from=mobile_mobile","pv_trackingURL":"","click_trackingURL":"","is_recipe":"0","sft":"0","jump":"{\"type\":\"4\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/i.meishi.cc\\/g\\/transit.php?ename=1940&from=mobile_mobile\",\"goodsSource\":\"\"}}"},{"photo":"http://site.meishij.net/adm/additive/2016-10-20/58089f437a4c7.jpg","click_type":4,"click_obj":"潘苹果-推荐;http://i.meishi.cc/g/transit.php?ename=1920&from=mobile_mobile","pv_trackingURL":"","click_trackingURL":"","is_recipe":"0","sft":"0","jump":"{\"type\":\"4\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/i.meishi.cc\\/g\\/transit.php?ename=1920&from=mobile_mobile\",\"goodsSource\":\"\"}}"},{"photo":"http://site.meishij.net/adm/additive/2016-10-27/5811a583a844b.png","click_type":4,"click_obj":"七周年  1025 编辑部 最热商品下方轮播横幅;http://i.meishi.cc/g/transit.php?ename=1934&from=mobile_mobile","pv_trackingURL":"","click_trackingURL":"","is_recipe":"0","sft":"0","jump":"{\"type\":\"4\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/i.meishi.cc\\/g\\/transit.php?ename=1934&from=mobile_mobile\",\"goodsSource\":\"\"}}"}]
+     * top4 : [{"photo":"http://site.meishij.net/adm/additive/2016-10-19/580749abd6771.jpg","click_type":4,"click_obj":"1019 广告部  今日推荐下方轮播横幅;http://i.meishi.cc/g/transit.php?ename=1919&from=mobile_mobile","pv_trackingURL":"","click_trackingURL":"","is_recipe":"0","sft":"0","jump":"{\"type\":\"4\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/i.meishi.cc\\/g\\/transit.php?ename=1919&from=mobile_mobile\",\"goodsSource\":\"\"}}"},{"photo":"http://site.meishij.net/adm/additive/2016-10-25/580f0f0726089.jpg","click_type":4,"click_obj":"1025 广告部 美的AH煲  今日推荐 ;http://i.meishi.cc/g/transit.php?ename=1938&from=mobile_mobile","pv_trackingURL":"","click_trackingURL":"","is_recipe":"0","sft":"0","jump":"{\"type\":\"4\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/i.meishi.cc\\/g\\/transit.php?ename=1938&from=mobile_mobile\",\"goodsSource\":\"\"}}"},{"photo":"http://site.meishij.net/adm/additive/2016-10-24/580dd90e8f8f2.jpg","click_type":4,"click_obj":"1021 编辑部 油温 今日推荐;http://i.meishi.cc/g/transit.php?ename=1933&from=mobile_mobile","pv_trackingURL":"","click_trackingURL":"","is_recipe":"0","sft":"0","jump":"{\"type\":\"4\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/i.meishi.cc\\/g\\/transit.php?ename=1933&from=mobile_mobile\",\"goodsSource\":\"\"}}"},{"photo":"http://static.meishij.net/images/get3/adscroll/adscroll_baikuanmifan.jpg","click_type":"5","click_obj":"1639954","pv_trackingURL":"","click_trackingURL":"","is_recipe":"0","sft":"0","jump":"{\"type\":\"51\",\"class_name\":\"MSArticleDetailController\",\"property\":{\"recipeId\":\"1639954\",\"goodsSource\":\"\"}}"},{"photo":"http://static.meishij.net/images/get3/adscroll/adscroll_banchengpin.jpg","click_type":"5","click_obj":"1636964","pv_trackingURL":"","click_trackingURL":"","is_recipe":"0","sft":"0","jump":"{\"type\":\"51\",\"class_name\":\"MSArticleDetailController\",\"property\":{\"recipeId\":\"1636964\",\"goodsSource\":\"\"}}"}]
+     * shops : [{"id":"7067","title":"能当乒乓球的手打牛肉丸","price":"56.9","guige":"2包","image":"http://site.meishij.net/shop/uploadfile/20161012/20161012180559.jpg","jump":"{\"type\":\"10\",\"class_name\":\"MSBuyGoodsDetailController\",\"property\":{\"goodsID\":\"7067\",\"sourceContent\":\"index\",\"goodsSource\":\"\"}}"},{"id":"1525","title":"高活性酵母让馒头更松软","price":"9.9","guige":"10g*10","image":"http://site.meishij.net/shop/uploadfile/20161024/20161024141629.jpg","jump":"{\"type\":\"10\",\"class_name\":\"MSBuyGoodsDetailController\",\"property\":{\"goodsID\":\"1525\",\"sourceContent\":\"index\",\"goodsSource\":\"\"}}"},{"id":"1090","title":"炒菜只用几滴油","price":"148","guige":"1件","image":"http://site.meishij.net/shop/uploadfile/20161014/20161014113133.jpg","jump":"{\"type\":\"10\",\"class_name\":\"MSBuyGoodsDetailController\",\"property\":{\"goodsID\":\"1090\",\"sourceContent\":\"index\",\"goodsSource\":\"\"}}"},{"id":"5241","title":"传承几代人的腊肠手艺","price":"39.9","guige":"1袋","image":"http://site.meishij.net/shop/uploadfile/20161008/20161008123830.jpg","jump":"{\"type\":\"10\",\"class_name\":\"MSBuyGoodsDetailController\",\"property\":{\"goodsID\":\"5241\",\"sourceContent\":\"index\",\"goodsSource\":\"\"}}"}]
+     * zt : [{"id":"0","title":"","type":"1","tj_type":"0","f_s_type":"http://m.meishij.net/huodong/zt.php?zt_id=293","photo":"http://images.meishij.net/p/20161027/64cb21b941d7b3802cdb261a57ebc502.jpg","descr":"","jump":"{\"type\":\"103\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/m.meishij.net\\/huodong\\/zt.php?zt_id=293\",\"goodsSource\":\"\"}}"},{"id":"0","title":"","type":"1","tj_type":"0","f_s_type":"http://m.meishij.net/huodong/zt.php?zt_id=291","photo":"http://images.meishij.net/p/20161026/ad86d75393b4269c4b64bbda1ed12527.jpg","descr":"","jump":"{\"type\":\"103\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/m.meishij.net\\/huodong\\/zt.php?zt_id=291\",\"goodsSource\":\"\"}}"},{"id":"31","title":"","type":"1","tj_type":"0","f_s_type":"http://m.meishij.net/huodong/caidan_zt.php?id=31","photo":"http://images.meishij.net/p/20161025/3b05ef30e3ff33c7e0a8ab5f1a996325.jpg","descr":"","jump":"{\"type\":\"103\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/m.meishij.net\\/huodong\\/caidan_zt.php?id=31\",\"goodsSource\":\"\"}}"},{"id":"0","title":"","type":"1","tj_type":"0","f_s_type":"http://m.meishij.net/huodong/zt.php?zt_id=285","photo":"http://images.meishij.net/p/20161024/183a03af619149c44c4d843603820102.jpg","descr":"","jump":"{\"type\":\"103\",\"class_name\":\"MSJWebAdvViewController\",\"property\":{\"urlString\":\"http:\\/\\/m.meishij.net\\/huodong\\/zt.php?zt_id=285\",\"goodsSource\":\"\"}}"}]
+     * customized : {"title":"猜你喜欢","time":"10:58为您更新","total":4,"data":[]}
+     * browser : {"refer":"http://www.meishij.net/chufang/diy/recaipu/58971.html","agent":"Mozilla/5.0 (Windows NT 6.1) .NET CLRMSN AppleWebKit/617.40 (KHTML, like Gecko) Maxthon/9.2.1.5051 Chrome/30.0.1394.101 Safari/272.80","url":"http://www.meishij.net/zuofa/hongzaoyinertang_7.html"}
      */
 
     private ObjBean obj;
@@ -48,50 +50,63 @@ public class RecommendEntity {
         this.obj = obj;
     }
 
+    @Override
+    public String toString() {
+        return "RecommendEntity{" +
+                "code='" + code + '\'' +
+                ", obj=" + obj +
+                '}';
+    }
+
     public static class ObjBean {
         /**
          * title : 最受欢迎
-         * image : http://static.meishij.net/wap6/images/v6/paihangbangnew.png
+         * image : http://static.meishij.net/wap6/images/v6/paihangbang.png
          */
 
         private Func1Bean func1;
         /**
          * title : 食材组菜
-         * image : http://static.meishij.net/wap6/images/v6/zhinengzucainew.png
+         * image : http://static.meishij.net/wap6/images/v6/zhinengzucai.png
          */
 
         private Func2Bean func2;
         /**
          * title : 猜你喜欢
-         * time : 13:45为您更新
-         * total : 2
+         * time : 10:58为您更新
+         * total : 4
          * data : []
          */
 
         private CustomizedBean customized;
         /**
-         * id : 1639649
-         * titlepic : http://images.meishij.net/p/20161025/583cb0e101d16639c5e42611cc7f6bfa.jpg
-         * title : 粢饭团
-         * descr : 总是豆浆配油条，这简直是小看了油条
+         * refer : http://www.meishij.net/chufang/diy/recaipu/58971.html
+         * agent : Mozilla/5.0 (Windows NT 6.1) .NET CLRMSN AppleWebKit/617.40 (KHTML, like Gecko) Maxthon/9.2.1.5051 Chrome/30.0.1394.101 Safari/272.80
+         * url : http://www.meishij.net/zuofa/hongzaoyinertang_7.html
+         */
+
+        private BrowserBean browser;
+        /**
+         * id : 586695
+         * titlepic : http://images.meishij.net/p/20161026/6f021430be1d4d14356abde24320e56b.jpg
+         * title : 夹心馒头片
+         * descr : 香港西多士和中式煎馒头结合的黄金产物
          * click_type : 5
-         * click_obj : 1639649
+         * click_obj : 586695
          * pv_trackingURL :
          * click_trackingURL :
-         * imp_urls : []
-         * click_urls : []
          * sft : 0
          * is_recipe : 1
          * is_tj : 1
-         * tj_img : http://site.meishij.net/r/94/48/4324594/a4324594_143671336859266.jpg
-         * fav_num : 557
-         * jump : {"type":"5","class_name":"MSRecipeDetailController","property":{"recipeId":"1639649"}}
+         * tj_img : http://images.meishij.net/p/20121130/a0c82dcfd9ce5d1b8766a5f2d28f18d2_150x150.jpg
+         * fav_num : 1592
+         * jump : {"type":"5","class_name":"MSRecipeDetailController","property":{"recipeId":"586695"}}
          */
 
         private List<SanCanBean> san_can;
         /**
          * title : 早餐
-         * sub_title : 三种经典早餐，温暖这个寒冷的清晨
+         * sub_title : 今天的早餐脑洞有点大哦
          * titlepic : http://i5.meishij.net/app/mobile/guyu_icon_1.png
          * click_type : 0
          * click_obj :
@@ -102,7 +117,7 @@ public class RecommendEntity {
         private List<SanCanTitlesBean> san_can_titles;
         /**
          * title : 菜谱分类
-         * image : http://static.meishij.net/wap6/images/v6/quanbunew.png
+         * image : http://static.meishij.net/wap6/images/v6/quanbu.png
          * click_type : 24
          * click_obj : 全部菜谱
          * jump : {"type":"24","class_name":"MSCategoryController","property":{}}
@@ -110,17 +125,14 @@ public class RecommendEntity {
 
         private List<FenleiBean> fenlei;
         /**
-         * photo : http://site.meishij.net/adm/additive/2016-10-21/5809ed1392021.jpg
+         * photo : http://site.meishij.net/adm/additive/2016-10-28/5812aa3cccec3.jpg
          * click_type : 4
-         * click_obj : 美食杰;http://i.meishi.cc/g/transit.php?ename=1908&from=mobile_mobile
+         * click_obj : 五谷-推荐;http://i.meishi.cc/g/transit.php?ename=1948&from=mobile_mobile
          * pv_trackingURL :
          * click_trackingURL :
-         * imp_urls : []
-         * click_urls : []
          * is_recipe : 0
          * sft : 0
-         * aid : 568
-         * jump : {"type":"4","class_name":"MSJWebAdvViewController","property":{"urlString":"http:\/\/i.meishi.cc\/g\/transit.php?ename=1908&from=mobile_mobile&goodsSource=1,568","goodsSource":"1,568"}}
+         * jump : {"type":"4","class_name":"MSJWebAdvViewController","property":{"urlString":"http:\/\/i.meishi.cc\/g\/transit.php?ename=1948&from=mobile_mobile","goodsSource":""}}
          */
 
         private List<Top3Bean> top3;
@@ -130,8 +142,6 @@ public class RecommendEntity {
          * click_obj : 1019 广告部  今日推荐下方轮播横幅;http://i.meishi.cc/g/transit.php?ename=1919&from=mobile_mobile
          * pv_trackingURL :
          * click_trackingURL :
-         * imp_urls : []
-         * click_urls : []
          * is_recipe : 0
          * sft : 0
          * jump : {"type":"4","class_name":"MSJWebAdvViewController","property":{"urlString":"http:\/\/i.meishi.cc\/g\/transit.php?ename=1919&from=mobile_mobile","goodsSource":""}}
@@ -139,13 +149,12 @@ public class RecommendEntity {
 
         private List<Top4Bean> top4;
         /**
-         * id : 5430
-         * title : 做水煮肉和泡面一样简单
-         * price : 11.8
-         * guige : 1袋
-         * image : http://site.meishij.net/shop/uploadfile/20161008/20161008123910.jpg
-         * goodsSource : 2,5430
-         * jump : {"type":"10","class_name":"MSBuyGoodsDetailController","property":{"goodsID":"5430","sourceContent":"index","goodsSource":"2,5430"}}
+         * id : 7067
+         * title : 能当乒乓球的手打牛肉丸
+         * price : 56.9
+         * guige : 2包
+         * image : http://site.meishij.net/shop/uploadfile/20161012/20161012180559.jpg
+         * jump : {"type":"10","class_name":"MSBuyGoodsDetailController","property":{"goodsID":"7067","sourceContent":"index","goodsSource":""}}
          */
 
         private List<ShopsBean> shops;
@@ -154,13 +163,30 @@ public class RecommendEntity {
          * title :
          * type : 1
          * tj_type : 0
-         * f_s_type : http://m.meishij.net/huodong/zt.php?zt_id=291
-         * photo : http://images.meishij.net/p/20161026/ad86d75393b4269c4b64bbda1ed12527.jpg
+         * f_s_type : http://m.meishij.net/huodong/zt.php?zt_id=293
+         * photo : http://images.meishij.net/p/20161027/64cb21b941d7b3802cdb261a57ebc502.jpg
          * descr :
-         * jump : {"type":"103","class_name":"MSJWebAdvViewController","property":{"urlString":"http:\/\/m.meishij.net\/huodong\/zt.php?zt_id=291","goodsSource":"4,0"}}
+         * jump : {"type":"103","class_name":"MSJWebAdvViewController","property":{"urlString":"http:\/\/m.meishij.net\/huodong\/zt.php?zt_id=293","goodsSource":""}}
          */
 
         private List<ZtBean> zt;
+
+        @Override
+        public String toString() {
+            return "ObjBean{" +
+                    "func1=" + func1 +
+                    ", func2=" + func2 +
+                    ", customized=" + customized +
+                    ", browser=" + browser +
+                    ", san_can=" + san_can +
+                    ", san_can_titles=" + san_can_titles +
+                    ", fenlei=" + fenlei +
+                    ", top3=" + top3 +
+                    ", top4=" + top4 +
+                    ", shops=" + shops +
+                    ", zt=" + zt +
+                    '}';
+        }
 
         public Func1Bean getFunc1() {
             return func1;
@@ -184,6 +210,14 @@ public class RecommendEntity {
 
         public void setCustomized(CustomizedBean customized) {
             this.customized = customized;
+        }
+
+        public BrowserBean getBrowser() {
+            return browser;
+        }
+
+        public void setBrowser(BrowserBean browser) {
+            this.browser = browser;
         }
 
         public List<SanCanBean> getSan_can() {
@@ -261,6 +295,14 @@ public class RecommendEntity {
             public void setImage(String image) {
                 this.image = image;
             }
+
+            @Override
+            public String toString() {
+                return "Func1Bean{" +
+                        "title='" + title + '\'' +
+                        ", image='" + image + '\'' +
+                        '}';
+            }
         }
 
         public static class Func2Bean {
@@ -281,6 +323,14 @@ public class RecommendEntity {
 
             public void setImage(String image) {
                 this.image = image;
+            }
+
+            @Override
+            public String toString() {
+                return "Func2Bean{" +
+                        "title='" + title + '\'' +
+                        ", image='" + image + '\'' +
+                        '}';
             }
         }
 
@@ -321,9 +371,58 @@ public class RecommendEntity {
             public void setData(List<?> data) {
                 this.data = data;
             }
+
+            @Override
+            public String toString() {
+                return "CustomizedBean{" +
+                        "title='" + title + '\'' +
+                        ", time='" + time + '\'' +
+                        ", total=" + total +
+                        ", data=" + data +
+                        '}';
+            }
         }
 
-        public static class SanCanBean {
+        public static class BrowserBean {
+            private String refer;
+            private String agent;
+            private String url;
+
+            public String getRefer() {
+                return refer;
+            }
+
+            public void setRefer(String refer) {
+                this.refer = refer;
+            }
+
+            public String getAgent() {
+                return agent;
+            }
+
+            public void setAgent(String agent) {
+                this.agent = agent;
+            }
+
+            public String getUrl() {
+                return url;
+            }
+
+            public void setUrl(String url) {
+                this.url = url;
+            }
+
+            @Override
+            public String toString() {
+                return "BrowserBean{" +
+                        "refer='" + refer + '\'' +
+                        ", agent='" + agent + '\'' +
+                        ", url='" + url + '\'' +
+                        '}';
+            }
+        }
+
+        public static class SanCanBean implements Serializable{
             private String id;
             private String titlepic;
             private String title;
@@ -338,8 +437,6 @@ public class RecommendEntity {
             private String tj_img;
             private String fav_num;
             private String jump;
-            private List<?> imp_urls;
-            private List<?> click_urls;
 
             public String getId() {
                 return id;
@@ -453,20 +550,24 @@ public class RecommendEntity {
                 this.jump = jump;
             }
 
-            public List<?> getImp_urls() {
-                return imp_urls;
-            }
-
-            public void setImp_urls(List<?> imp_urls) {
-                this.imp_urls = imp_urls;
-            }
-
-            public List<?> getClick_urls() {
-                return click_urls;
-            }
-
-            public void setClick_urls(List<?> click_urls) {
-                this.click_urls = click_urls;
+            @Override
+            public String toString() {
+                return "SanCanBean{" +
+                        "id='" + id + '\'' +
+                        ", titlepic='" + titlepic + '\'' +
+                        ", title='" + title + '\'' +
+                        ", descr='" + descr + '\'' +
+                        ", click_type='" + click_type + '\'' +
+                        ", click_obj='" + click_obj + '\'' +
+                        ", pv_trackingURL='" + pv_trackingURL + '\'' +
+                        ", click_trackingURL='" + click_trackingURL + '\'' +
+                        ", sft='" + sft + '\'' +
+                        ", is_recipe='" + is_recipe + '\'' +
+                        ", is_tj='" + is_tj + '\'' +
+                        ", tj_img='" + tj_img + '\'' +
+                        ", fav_num='" + fav_num + '\'' +
+                        ", jump='" + jump + '\'' +
+                        '}';
             }
         }
 
@@ -534,6 +635,19 @@ public class RecommendEntity {
             public void setClick_trackingURL(String click_trackingURL) {
                 this.click_trackingURL = click_trackingURL;
             }
+
+            @Override
+            public String toString() {
+                return "SanCanTitlesBean{" +
+                        "title='" + title + '\'' +
+                        ", sub_title='" + sub_title + '\'' +
+                        ", titlepic='" + titlepic + '\'' +
+                        ", click_type='" + click_type + '\'' +
+                        ", click_obj='" + click_obj + '\'' +
+                        ", pv_trackingURL='" + pv_trackingURL + '\'' +
+                        ", click_trackingURL='" + click_trackingURL + '\'' +
+                        '}';
+            }
         }
 
         public static class FenleiBean {
@@ -582,6 +696,17 @@ public class RecommendEntity {
             public void setJump(String jump) {
                 this.jump = jump;
             }
+
+            @Override
+            public String toString() {
+                return "FenleiBean{" +
+                        "title='" + title + '\'' +
+                        ", image='" + image + '\'' +
+                        ", click_type='" + click_type + '\'' +
+                        ", click_obj='" + click_obj + '\'' +
+                        ", jump='" + jump + '\'' +
+                        '}';
+            }
         }
 
         public static class Top3Bean {
@@ -592,10 +717,7 @@ public class RecommendEntity {
             private String click_trackingURL;
             private String is_recipe;
             private String sft;
-            private String aid;
             private String jump;
-            private List<?> imp_urls;
-            private List<?> click_urls;
 
             public String getPhoto() {
                 return photo;
@@ -653,14 +775,6 @@ public class RecommendEntity {
                 this.sft = sft;
             }
 
-            public String getAid() {
-                return aid;
-            }
-
-            public void setAid(String aid) {
-                this.aid = aid;
-            }
-
             public String getJump() {
                 return jump;
             }
@@ -669,20 +783,18 @@ public class RecommendEntity {
                 this.jump = jump;
             }
 
-            public List<?> getImp_urls() {
-                return imp_urls;
-            }
-
-            public void setImp_urls(List<?> imp_urls) {
-                this.imp_urls = imp_urls;
-            }
-
-            public List<?> getClick_urls() {
-                return click_urls;
-            }
-
-            public void setClick_urls(List<?> click_urls) {
-                this.click_urls = click_urls;
+            @Override
+            public String toString() {
+                return "Top3Bean{" +
+                        "photo='" + photo + '\'' +
+                        ", click_type=" + click_type +
+                        ", click_obj='" + click_obj + '\'' +
+                        ", pv_trackingURL='" + pv_trackingURL + '\'' +
+                        ", click_trackingURL='" + click_trackingURL + '\'' +
+                        ", is_recipe='" + is_recipe + '\'' +
+                        ", sft='" + sft + '\'' +
+                        ", jump='" + jump + '\'' +
+                        '}';
             }
         }
 
@@ -695,8 +807,6 @@ public class RecommendEntity {
             private String is_recipe;
             private String sft;
             private String jump;
-            private List<?> imp_urls;
-            private List<?> click_urls;
 
             public String getPhoto() {
                 return photo;
@@ -762,20 +872,18 @@ public class RecommendEntity {
                 this.jump = jump;
             }
 
-            public List<?> getImp_urls() {
-                return imp_urls;
-            }
-
-            public void setImp_urls(List<?> imp_urls) {
-                this.imp_urls = imp_urls;
-            }
-
-            public List<?> getClick_urls() {
-                return click_urls;
-            }
-
-            public void setClick_urls(List<?> click_urls) {
-                this.click_urls = click_urls;
+            @Override
+            public String toString() {
+                return "Top4Bean{" +
+                        "photo='" + photo + '\'' +
+                        ", click_type=" + click_type +
+                        ", click_obj='" + click_obj + '\'' +
+                        ", pv_trackingURL='" + pv_trackingURL + '\'' +
+                        ", click_trackingURL='" + click_trackingURL + '\'' +
+                        ", is_recipe='" + is_recipe + '\'' +
+                        ", sft='" + sft + '\'' +
+                        ", jump='" + jump + '\'' +
+                        '}';
             }
         }
 
@@ -785,7 +893,6 @@ public class RecommendEntity {
             private String price;
             private String guige;
             private String image;
-            private String goodsSource;
             private String jump;
 
             public String getId() {
@@ -828,20 +935,24 @@ public class RecommendEntity {
                 this.image = image;
             }
 
-            public String getGoodsSource() {
-                return goodsSource;
-            }
-
-            public void setGoodsSource(String goodsSource) {
-                this.goodsSource = goodsSource;
-            }
-
             public String getJump() {
                 return jump;
             }
 
             public void setJump(String jump) {
                 this.jump = jump;
+            }
+
+            @Override
+            public String toString() {
+                return "ShopsBean{" +
+                        "id='" + id + '\'' +
+                        ", title='" + title + '\'' +
+                        ", price='" + price + '\'' +
+                        ", guige='" + guige + '\'' +
+                        ", image='" + image + '\'' +
+                        ", jump='" + jump + '\'' +
+                        '}';
             }
         }
 
@@ -917,6 +1028,20 @@ public class RecommendEntity {
 
             public void setJump(String jump) {
                 this.jump = jump;
+            }
+
+            @Override
+            public String toString() {
+                return "ZtBean{" +
+                        "id='" + id + '\'' +
+                        ", title='" + title + '\'' +
+                        ", type='" + type + '\'' +
+                        ", tj_type='" + tj_type + '\'' +
+                        ", f_s_type='" + f_s_type + '\'' +
+                        ", photo='" + photo + '\'' +
+                        ", descr='" + descr + '\'' +
+                        ", jump='" + jump + '\'' +
+                        '}';
             }
         }
     }

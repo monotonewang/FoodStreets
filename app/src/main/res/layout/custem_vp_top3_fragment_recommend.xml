@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="160dp">
     </android.support.v4.view.ViewPager>
-    <com.wang.www.custem.Nav_View
+    <com.wang.www.custem.NavView
         android:id="@+id/custem_vp_top3_fragment_recommend_navview"
         android:layout_gravity="bottom|center"
         app:checkImage="@drawable/ic_guide_indicator_page_new_normal"
@@ -16,5 +16,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-    </com.wang.www.custem.Nav_View>
+    </com.wang.www.custem.NavView>
 </FrameLayout>
