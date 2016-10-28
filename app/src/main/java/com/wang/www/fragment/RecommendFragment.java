@@ -19,6 +19,7 @@ import com.androidnetworking.interfaces.StringRequestListener;
 import com.bumptech.glide.Glide;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
+import com.viewpagerindicator.CirclePageIndicator;
 import com.wang.www.R;
 import com.wang.www.adapter.RecommendViewPagerAdapter;
 import com.wang.www.base.BaseFragment;
@@ -143,25 +144,17 @@ public class RecommendFragment extends BaseFragment {
 
                             RecommendViewPagerAdapter recommendViewPagerAdapter = new RecommendViewPagerAdapter(getFragmentManager(), sancanEntity, getActivity());
                             Log.e(TAG, "onResponse: " + sancanEntity);
-
 //                            viewPager.setAdapter(recommendViewPagerAdapter);
-
-
-                            AbsListView.LayoutParams layoutParams = new AbsListView.LayoutParams(AbsListView.LayoutParams.MATCH_PARENT, AbsListView.LayoutParams.WRAP_CONTENT);
-                            TextView textView = new TextView(getActivity());
-                            textView.setText("add");
-                            textView.setGravity(Gravity.CENTER);
-                            textView.setTextSize(16);
-                            textView.setLayoutParams(layoutParams);
-
                             ListView listView = recommendListView.getRefreshableView();
-                            listView.addHeaderView(textView);
-
+//                            addHeaderTextView(listView);
                             recommendView = new RecommendView(getActivity());
                             ViewPager viewPager = recommendView.getViewPager();
                             viewPager.setAdapter(recommendViewPagerAdapter);
-                            listView.addHeaderView(recommendView);
 
+                            CirclePageIndicator circlePageIndicator = recommendView.getCirclePageIndicator();
+                            circlePageIndicator.setViewPager(viewPager);
+
+                            listView.addHeaderView(recommendView);
 
                         }
 
@@ -173,6 +166,21 @@ public class RecommendFragment extends BaseFragment {
                     }
                 });
 //        recommendFragmentVPView.setUrl(Constants.URL.RecommendUrl);
+    }
+
+    /**
+     * add TextView
+     *
+     * @param listView
+     */
+    private void addHeaderTextView(ListView listView) {
+        AbsListView.LayoutParams layoutParams = new AbsListView.LayoutParams(AbsListView.LayoutParams.MATCH_PARENT, AbsListView.LayoutParams.WRAP_CONTENT);
+        TextView textView = new TextView(getActivity());
+        textView.setText("add");
+        textView.setGravity(Gravity.CENTER);
+        textView.setTextSize(16);
+        textView.setLayoutParams(layoutParams);
+        listView.addHeaderView(textView);
     }
 
 

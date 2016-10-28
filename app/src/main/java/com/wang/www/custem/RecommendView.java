@@ -6,6 +6,7 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.RelativeLayout;
 
+import com.viewpagerindicator.CirclePageIndicator;
 import com.wang.www.R;
 
 /**
@@ -17,7 +18,8 @@ import com.wang.www.R;
 
 public class RecommendView extends RelativeLayout {
     private Context context;
-    public ViewPager viewPager;
+    private ViewPager viewPager;
+    private CirclePageIndicator circlePageIndicator;
 
     public RecommendView(Context context) {
         super(context);
@@ -31,13 +33,17 @@ public class RecommendView extends RelativeLayout {
     }
 
     private void init() {
-        RelativeLayout relativeLayout = (RelativeLayout) LayoutInflater.from(context).inflate(R.layout.custom_recommend, this,true);
+        RelativeLayout relativeLayout = (RelativeLayout) LayoutInflater.from(context).inflate(R.layout.custom_recommend, this, true);
         viewPager = (ViewPager) relativeLayout.findViewById(R.id.custom_recommend_vp);
-        NavView navView = (NavView) relativeLayout.findViewById(R.id.custom_recommend_nav);
+        circlePageIndicator = (CirclePageIndicator) relativeLayout.findViewById(R.id.custom_recommend_cpi);
     }
 
     public ViewPager getViewPager() {
         return viewPager;
+    }
+
+    public CirclePageIndicator getCirclePageIndicator() {
+        return circlePageIndicator;
     }
 
 }

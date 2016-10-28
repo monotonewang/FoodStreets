@@ -6,13 +6,27 @@
 
     <FrameLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="50dp">
 
-        <android.support.v4.view.ViewPager
-            android:id="@+id/custom_recommend_vp"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="400dp" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/custom_recommend_vp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+
+            <com.viewpagerindicator.CirclePageIndicator
+                android:id="@+id/custom_recommend_cpi"
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+        </LinearLayout>
+
+
     </FrameLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"

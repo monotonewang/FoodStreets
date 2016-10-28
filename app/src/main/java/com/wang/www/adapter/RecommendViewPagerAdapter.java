@@ -5,7 +5,6 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
 import android.support.v13.app.FragmentPagerAdapter;
-import android.util.Log;
 import android.view.ViewGroup;
 
 import com.wang.www.fragment.RecommendViewPagerFragment;
@@ -32,8 +31,6 @@ public class RecommendViewPagerAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         Fragment fragment = RecommendViewPagerFragment.getInstance(sanCanEntity.get(position));
-        String str = sanCanEntity.get(position).getTitle();
-        Log.e(TAG, str);
         return fragment;
     }
 
