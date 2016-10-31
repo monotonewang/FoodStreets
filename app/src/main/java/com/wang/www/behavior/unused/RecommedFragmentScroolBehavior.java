@@ -1,4 +1,4 @@
-package com.wang.www.behavior;
+package com.wang.www.behavior.unused;
 
 import android.content.Context;
 import android.support.design.widget.CoordinatorLayout;

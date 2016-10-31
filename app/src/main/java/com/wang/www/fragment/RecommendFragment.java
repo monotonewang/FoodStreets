@@ -3,12 +3,10 @@ package com.wang.www.fragment;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Handler;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -16,8 +14,6 @@ import com.alibaba.fastjson.JSONObject;
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.StringRequestListener;
-import com.bumptech.glide.Glide;
-import com.facebook.drawee.view.SimpleDraweeView;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.viewpagerindicator.CirclePageIndicator;
 import com.wang.www.R;
@@ -28,7 +24,6 @@ import com.wang.www.custem.RecommendView;
 import com.wang.www.model.MainEntity;
 import com.wang.www.model.RecommendEntity;
 import com.wang.www.util.Constants;
-import com.wang.www.util.FrescoUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,11 +55,11 @@ public class RecommendFragment extends BaseFragment {
     protected void init(View view) {
         super.init(view);
         recommendListView = (PullToRefreshListView) view.findViewById(R.id.recommend_ptr);
-        SimpleDraweeView recommendSdv = (SimpleDraweeView) view.findViewById(R.id.recommend_sdv);
-        FrescoUtil.imageViewBind("http://img.sootuu.com/vector/200801/097/310.jpg", recommendSdv);
-        ImageView imageView = (ImageView) view.findViewById(R.id.recommend_iv);
-        Glide.with(this).load("http://img1.imgtn.bdimg.com/it/u=1293775107,6809434&fm=21&gp=0.jpg").into(imageView);
-        viewPager = (ViewPager) view.findViewById(R.id.recommend_vp);
+//        SimpleDraweeView recommendSdv = (SimpleDraweeView) view.findViewById(R.id.recommend_sdv);
+//        FrescoUtil.imageViewBind("http://img.sootuu.com/vector/200801/097/310.jpg", recommendSdv);
+//        ImageView imageView = (ImageView) view.findViewById(R.id.recommend_iv);
+//        Glide.with(this).load("http://img1.imgtn.bdimg.com/it/u=1293775107,6809434&fm=21&gp=0.jpg").into(imageView);
+//        viewPager = (ViewPager) view.findViewById(R.id.recommend_vp);
 
 //        pullToRefreshView.setHeadView(R.layout.custem_ptr_headview);
 //        pullToRefreshView.getListView().setOnItemClickListener(this);
@@ -126,7 +121,7 @@ public class RecommendFragment extends BaseFragment {
 //        OkHttpUtil.downJSON(Constants.URL.RecommendUrl, this);
         List<String> list = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-            list.add("你好下拉刷新" + i);
+            list.add("PullTORefreshView" + i);
         }
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, list);
         recommendListView.setAdapter(arrayAdapter);
@@ -142,15 +137,25 @@ public class RecommendFragment extends BaseFragment {
                             List<RecommendEntity.ObjBean.SanCanBean> san_can = recommendEntity.getObj().getSan_can();
                             ArrayList<RecommendEntity.ObjBean.SanCanBean> sancanEntity = (ArrayList<RecommendEntity.ObjBean.SanCanBean>) san_can;
 
-                            RecommendViewPagerAdapter recommendViewPagerAdapter = new RecommendViewPagerAdapter(getFragmentManager(), sancanEntity, getActivity());
-                            Log.e(TAG, "onResponse: " + sancanEntity);
+                            List<ArrayList<RecommendEntity.ObjBean.SanCanBean>> sanCanEntities = new ArrayList<>();
+                            int i = -3;
+                            for (int k = 0; k < sancanEntity.size() / 3; k++) {
+                                ArrayList<RecommendEntity.ObjBean.SanCanBean> dataList = new ArrayList<>();
+                                i = i + 3;
+                                for (int j = i; j < i + 3; j++) {
+                                    dataList.add(sancanEntity.get(j));
+                                }
+                                sanCanEntities.add(dataList);
+                            }
+
+                            RecommendViewPagerAdapter recommendViewPagerAdapter = new RecommendViewPagerAdapter(getFragmentManager(), sanCanEntities, getActivity());
 //                            viewPager.setAdapter(recommendViewPagerAdapter);
                             ListView listView = recommendListView.getRefreshableView();
 //                            addHeaderTextView(listView);
                             recommendView = new RecommendView(getActivity());
                             ViewPager viewPager = recommendView.getViewPager();
                             viewPager.setAdapter(recommendViewPagerAdapter);
-
+                            //set circle
                             CirclePageIndicator circlePageIndicator = recommendView.getCirclePageIndicator();
                             circlePageIndicator.setViewPager(viewPager);
 

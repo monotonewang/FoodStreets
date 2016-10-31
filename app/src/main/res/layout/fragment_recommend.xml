@@ -34,33 +34,33 @@
             android:layout_weight="1"
             android:src="@drawable/tj_msg" />
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        >
-        <ImageView
-            android:id="@+id/recommend_iv"
-            android:layout_width="60dp"
-            android:layout_height="60dp" />
-        <com.facebook.drawee.view.SimpleDraweeView
-            android:id="@+id/recommend_sdv"
-            android:layout_width="60dp"
-            android:layout_height="60dp">
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="60dp"-->
+        <!--android:orientation="horizontal"-->
+        <!--&gt;-->
+        <!--<ImageView-->
+            <!--android:id="@+id/recommend_iv"-->
+            <!--android:layout_width="60dp"-->
+            <!--android:layout_height="60dp" />-->
+        <!--<com.facebook.drawee.view.SimpleDraweeView-->
+            <!--android:id="@+id/recommend_sdv"-->
+            <!--android:layout_width="60dp"-->
+            <!--android:layout_height="60dp">-->
 
-        </com.facebook.drawee.view.SimpleDraweeView>
-    </LinearLayout>
+        <!--</com.facebook.drawee.view.SimpleDraweeView>-->
+    <!--</LinearLayout>-->
 
-    <LinearLayout
+    <!--<LinearLayout-->
 
-        android:layout_width="match_parent"
-        android:layout_height="100dp">
-        <android.support.v4.view.ViewPager
-            android:id="@+id/recommend_vp"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            ></android.support.v4.view.ViewPager>
-    </LinearLayout>
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="100dp">-->
+        <!--<android.support.v4.view.ViewPager-->
+            <!--android:id="@+id/recommend_vp"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="100dp"-->
+            <!--&gt;</android.support.v4.view.ViewPager>-->
+    <!--</LinearLayout>-->
 
     <com.handmark.pulltorefresh.library.PullToRefreshListView
         android:id="@+id/recommend_ptr"
@@ -91,10 +91,10 @@
     <!--android:src="@android:drawable/ic_btn_speak_now"-->
     <!--app:layout_behavior="com.example.user.foodstreet.behavior.RecommedFragmentScroolBehavior" />-->
 
-    <!--<com.wang.www.custem.PullToRefreshView-->
+    <!--<com.wang.www.custem.unused.PullToRefreshView-->
     <!--android:id="@+id/fragment_recommend_ptrView"-->
     <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"></com.wang.www.custem.PullToRefreshView>-->
+    <!--android:layout_height="match_parent"></com.wang.www.custem.unused.PullToRefreshView>-->
 
 
     <!--</android.support.design.widget.CoordinatorLayout>-->

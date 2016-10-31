@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.widget.FrameLayout;
 
 import com.wang.www.R;
+import com.wang.www.custem.unused.NavView;
 import com.wang.www.model.MainEntity;
 
 import butterknife.Bind;

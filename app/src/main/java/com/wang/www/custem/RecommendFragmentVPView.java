@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 
 import com.wang.www.R;
+import com.wang.www.custem.unused.NavView;
 import com.wang.www.model.MainEntity;
 import com.wang.www.util.JsonUtil;
 import com.wang.www.util.OkHttpUtil;
@@ -59,6 +60,7 @@ public class RecommendFragmentVPView extends LinearLayout implements OkHttpUtil.
 //            Log.e(TAG, "onResponse: "+san_can);
             //设置组合控件的圆圈
             navView.setCount(san_can.size() / 3);
+
             sanCanEntities = new ArrayList<>();
             int i = -3;
             for (int k = 0; k < san_can.size() / 3; k++) {

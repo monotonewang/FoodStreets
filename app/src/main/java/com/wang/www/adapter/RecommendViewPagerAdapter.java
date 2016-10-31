@@ -11,6 +11,7 @@ import com.wang.www.fragment.RecommendViewPagerFragment;
 import com.wang.www.model.RecommendEntity;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * deso: FoodStreets TODO<br/>
@@ -20,10 +21,10 @@ import java.util.ArrayList;
  */
 
 public class RecommendViewPagerAdapter extends FragmentPagerAdapter {
-    private ArrayList<RecommendEntity.ObjBean.SanCanBean> sanCanEntity;
+    private List<ArrayList<RecommendEntity.ObjBean.SanCanBean>> sanCanEntity;
     private String TAG = "RecommendViewPager";
 
-    public RecommendViewPagerAdapter(FragmentManager fm, ArrayList<RecommendEntity.ObjBean.SanCanBean> sanCanEntitys, Context context) {
+    public RecommendViewPagerAdapter(FragmentManager fm, List<ArrayList<RecommendEntity.ObjBean.SanCanBean>> sanCanEntitys, Context context) {
         super(fm);
         this.sanCanEntity = sanCanEntitys;
     }

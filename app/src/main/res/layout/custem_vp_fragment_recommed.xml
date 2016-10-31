@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="400dp">
     </android.support.v4.view.ViewPager>
-    <com.wang.www.custem.NavView
+    <com.wang.www.custem.unused.NavView
         android:id="@+id/fragment_recommend_nav"
         android:layout_width="wrap_content"
         android:layout_gravity="center"

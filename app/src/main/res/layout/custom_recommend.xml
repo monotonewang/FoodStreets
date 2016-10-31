@@ -6,7 +6,7 @@
 
     <FrameLayout
         android:layout_width="wrap_content"
-        android:layout_height="50dp">
+        android:layout_height="400dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -16,7 +16,7 @@
             <android.support.v4.view.ViewPager
                 android:id="@+id/custom_recommend_vp"
                 android:layout_width="match_parent"
-                android:layout_height="40dp" />
+                android:layout_height="390dp" />
 
             <com.viewpagerindicator.CirclePageIndicator
                 android:id="@+id/custom_recommend_cpi"
@@ -32,7 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="10dp">
 
-        <com.wang.www.custem.NavView
+        <com.wang.www.custem.unused.NavView
             android:id="@+id/custom_recommend_nav"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
