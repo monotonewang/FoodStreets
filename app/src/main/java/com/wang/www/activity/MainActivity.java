@@ -1,4 +1,4 @@
-package com.wang.www;
+package com.wang.www.activity;
 
 
 import android.app.FragmentManager;
@@ -6,6 +6,7 @@ import android.app.FragmentTransaction;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.wang.www.R;
 import com.wang.www.base.BaseActivity;
 import com.wang.www.fragment.EatFragment;
 import com.wang.www.fragment.FoundFragment;

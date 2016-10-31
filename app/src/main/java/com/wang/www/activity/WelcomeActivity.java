@@ -1,4 +1,4 @@
-package com.wang.www;
+package com.wang.www.activity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -8,6 +8,7 @@ import android.os.Message;
 import android.support.v4.view.ViewPager;
 import android.util.DisplayMetrics;
 
+import com.wang.www.R;
 import com.wang.www.adapter.WelcomeAdapter;
 import com.wang.www.base.BaseActivity;
 

@@ -1,8 +1,9 @@
-package com.wang.www;
+package com.wang.www.activity;
 
 import android.content.Intent;
 import android.os.Handler;
 
+import com.wang.www.R;
 import com.wang.www.base.BaseActivity;
 import com.wang.www.util.Constants;
 import com.wang.www.util.ShareUtil;

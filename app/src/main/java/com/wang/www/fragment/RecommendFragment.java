@@ -2,10 +2,13 @@ package com.wang.www.fragment;
 
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
@@ -22,6 +25,7 @@ import com.bumptech.glide.Glide;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.viewpagerindicator.CirclePageIndicator;
 import com.wang.www.R;
+import com.wang.www.adapter.RecommendTop3Adapter;
 import com.wang.www.adapter.RecommendViewPagerAdapter;
 import com.wang.www.base.BaseFragment;
 import com.wang.www.custem.RecommendFenleiView;
@@ -135,61 +139,33 @@ public class RecommendFragment extends BaseFragment {
                         RecommendEntity recommendEntity = JSONObject.parseObject(response, RecommendEntity.class);
 //                        Log.e(TAG,recommendEntity.toString());
                         if (Integer.parseInt(recommendEntity.getCode()) == 1) {
-                            List<RecommendEntity.ObjBean.SanCanBean> san_can = recommendEntity.getObj().getSan_can();
-                            ArrayList<RecommendEntity.ObjBean.SanCanBean> sancanEntity = (ArrayList<RecommendEntity.ObjBean.SanCanBean>) san_can;
-                            List<ArrayList<RecommendEntity.ObjBean.SanCanBean>> sanCanEntities = new ArrayList<>();
-                            int i = -3;
-                            for (int k = 0; k < sancanEntity.size() / 3; k++) {
-                                ArrayList<RecommendEntity.ObjBean.SanCanBean> dataList = new ArrayList<>();
-                                i = i + 3;
-                                for (int j = i; j < i + 3; j++) {
-                                    dataList.add(sancanEntity.get(j));
-                                }
-                                sanCanEntities.add(dataList);
-                            }
-
-                            //title
-                            List<RecommendEntity.ObjBean.SanCanTitlesBean> san_can_titles = recommendEntity.getObj().getSan_can_titles();
-                            ArrayList<RecommendEntity.ObjBean.SanCanTitlesBean> sanCanTitlesEntity = (ArrayList<RecommendEntity.ObjBean.SanCanTitlesBean>) san_can_titles;
-                            List<ArrayList<RecommendEntity.ObjBean.SanCanTitlesBean>> sanCanTitleEntities = new ArrayList<>();
-                            int y = -1;
-                            for (int k = 0; k < san_can_titles.size(); k++) {
-                                ArrayList<RecommendEntity.ObjBean.SanCanTitlesBean> datas = new ArrayList<>();
-                                y = y + 1;
-                                for (int t = y; t < y + 1; t++) {
-                                    datas.add(sanCanTitlesEntity.get(t));
-                                }
-                                sanCanTitleEntities.add(datas);
-                            }
-
-                            RecommendViewPagerAdapter recommendViewPagerAdapter = new RecommendViewPagerAdapter(getFragmentManager(), sanCanEntities, sanCanTitleEntities, getActivity());
-//                            viewPager.setAdapter(recommendViewPagerAdapter);
+                            Log.e(TAG, "onResponse: " + recommendEntity);
                             ListView listView = recommendListView.getRefreshableView();
-//                            addHeaderTextView(listView);
-                            recommendView = new RecommendView(getActivity());
-                            ViewPager viewPager = recommendView.getViewPager();
-                            viewPager.setAdapter(recommendViewPagerAdapter);
-                            //set circle
-                            CirclePageIndicator circlePageIndicator = recommendView.getCirclePageIndicator();
-                            circlePageIndicator.setViewPager(viewPager);
+                            //topViewPager
+                            setTopViewPager(recommendEntity);
 
                             //fenlei
-                            List<RecommendEntity.ObjBean.FenleiBean> fenlei = recommendEntity.getObj().getFenlei();
-                            RecommendFenleiView recommendFenleiView = new RecommendFenleiView(getActivity());
-                            WindowManager windowManager = getActivity().getWindowManager();
-                            recommendFenleiView.setTotal(fenlei, windowManager);
+                            RecommendFenleiView recommendFenleiView = setFenleiView(recommendEntity);
 
                             //func
-                            View recommendFuncView = LayoutInflater.from(getActivity()).inflate(R.layout.custom_func, new LinearLayout(getActivity()));
-                            ImageView imageView1 = (ImageView) recommendFuncView.findViewById(R.id.iv_func1);
-                            ImageView imageView2 = (ImageView) recommendFuncView.findViewById(R.id.iv_func2);
-                            Glide.with(getActivity()).load(recommendEntity.getObj().getFunc1().getImage()).into(imageView1);
-                            Glide.with(getActivity()).load(recommendEntity.getObj().getFunc2().getImage()).into(imageView2);
+                            LinearLayout recommendFuncView = setFuncView(recommendEntity);
+
+                            //top3
+                            ViewPager top3VPView = new ViewPager(getActivity());
+                            ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 500);
+                            top3VPView.setLayoutParams(layoutParams);
+
+//                            LinearLayout recommencTop3View = (LinearLayout) LayoutInflater.from(getActivity()).inflate(R.layout.fragment_vp_top3, new LinearLayout(getActivity()), true);
+//                            ViewPager viewPager = (ViewPager) recommencTop3View.findViewById(R.id.fragment_recommend_vp_top3);
+
+                            RecommendTop3Adapter recommendTop3Adapter = new RecommendTop3Adapter(recommendEntity.getObj().getTop3(), getActivity());
+                            top3VPView.setAdapter(recommendTop3Adapter);
 
 
                             listView.addHeaderView(recommendView);
                             listView.addHeaderView(recommendFenleiView);
                             listView.addHeaderView(recommendFuncView);
+                            listView.addHeaderView(top3VPView);
 
                         }
 
@@ -201,6 +177,67 @@ public class RecommendFragment extends BaseFragment {
                     }
                 });
 //        recommendFragmentVPView.setUrl(Constants.URL.RecommendUrl);
+    }
+
+    @NonNull
+    private LinearLayout setFuncView(RecommendEntity recommendEntity) {
+        LinearLayout recommendFuncView = (LinearLayout) LayoutInflater.from(getActivity()).inflate(R.layout.custom_func, new LinearLayout(getActivity()));
+        ImageView imageView1 = (ImageView) recommendFuncView.findViewById(R.id.iv_func1);
+        ImageView imageView2 = (ImageView) recommendFuncView.findViewById(R.id.iv_func2);
+        Glide.with(getActivity()).load(recommendEntity.getObj().getFunc1().getImage()).into(imageView1);
+        Glide.with(getActivity()).load(recommendEntity.getObj().getFunc2().getImage()).into(imageView2);
+        return recommendFuncView;
+    }
+
+    @NonNull
+    private RecommendFenleiView setFenleiView(RecommendEntity recommendEntity) {
+        List<RecommendEntity.ObjBean.FenleiBean> fenlei = recommendEntity.getObj().getFenlei();
+        RecommendFenleiView recommendFenleiView = new RecommendFenleiView(getActivity());
+        WindowManager windowManager = getActivity().getWindowManager();
+        recommendFenleiView.setTotal(fenlei, windowManager);
+        return recommendFenleiView;
+    }
+
+    private void setTopViewPager(RecommendEntity recommendEntity) {
+        //viewPager image
+        List<RecommendEntity.ObjBean.SanCanBean> san_can = recommendEntity.getObj().getSan_can();
+        ArrayList<RecommendEntity.ObjBean.SanCanBean> sancanEntity = (ArrayList<RecommendEntity.ObjBean.SanCanBean>) san_can;
+        List<ArrayList<RecommendEntity.ObjBean.SanCanBean>> sanCanEntities = new ArrayList<>();
+        int i = -3;
+        for (int k = 0; k < sancanEntity.size() / 3; k++) {
+            ArrayList<RecommendEntity.ObjBean.SanCanBean> dataList = new ArrayList<>();
+            i = i + 3;
+            for (int j = i; j < i + 3; j++) {
+                dataList.add(sancanEntity.get(j));
+            }
+            sanCanEntities.add(dataList);
+        }
+
+        //title
+        List<RecommendEntity.ObjBean.SanCanTitlesBean> san_can_titles = recommendEntity.getObj().getSan_can_titles();
+        ArrayList<RecommendEntity.ObjBean.SanCanTitlesBean> sanCanTitlesEntity = (ArrayList<RecommendEntity.ObjBean.SanCanTitlesBean>) san_can_titles;
+        List<ArrayList<RecommendEntity.ObjBean.SanCanTitlesBean>> sanCanTitleEntities = new ArrayList<>();
+        int y = -1;
+        for (int k = 0; k < san_can_titles.size(); k++) {
+            ArrayList<RecommendEntity.ObjBean.SanCanTitlesBean> datas = new ArrayList<>();
+            y = y + 1;
+            for (int t = y; t < y + 1; t++) {
+                datas.add(sanCanTitlesEntity.get(t));
+            }
+            sanCanTitleEntities.add(datas);
+        }
+
+        RecommendViewPagerAdapter recommendViewPagerAdapter = new RecommendViewPagerAdapter(getFragmentManager(), sanCanEntities, sanCanTitleEntities, getActivity());
+//                            viewPager.setAdapter(recommendViewPagerAdapter);
+
+//                            addHeaderTextView(listView);
+        recommendView = new RecommendView(getActivity());
+        ViewPager viewPager = recommendView.getViewPager();
+        viewPager.setAdapter(recommendViewPagerAdapter);
+        //set circle
+        CirclePageIndicator circlePageIndicator = recommendView.getCirclePageIndicator();
+        circlePageIndicator.setViewPager(viewPager);
+
     }
 
     /**

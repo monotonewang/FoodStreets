@@ -35,31 +35,31 @@
             android:src="@drawable/tj_msg" />
     </LinearLayout>
     <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="60dp"-->
-        <!--android:orientation="horizontal"-->
-        <!--&gt;-->
-        <!--<ImageView-->
-            <!--android:id="@+id/recommend_iv"-->
-            <!--android:layout_width="60dp"-->
-            <!--android:layout_height="60dp" />-->
-        <!--<com.facebook.drawee.view.SimpleDraweeView-->
-            <!--android:id="@+id/recommend_sdv"-->
-            <!--android:layout_width="60dp"-->
-            <!--android:layout_height="60dp">-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="60dp"-->
+    <!--android:orientation="horizontal"-->
+    <!--&gt;-->
+    <!--<ImageView-->
+    <!--android:id="@+id/recommend_iv"-->
+    <!--android:layout_width="60dp"-->
+    <!--android:layout_height="60dp" />-->
+    <!--<com.facebook.drawee.view.SimpleDraweeView-->
+    <!--android:id="@+id/recommend_sdv"-->
+    <!--android:layout_width="60dp"-->
+    <!--android:layout_height="60dp">-->
 
-        <!--</com.facebook.drawee.view.SimpleDraweeView>-->
+    <!--</com.facebook.drawee.view.SimpleDraweeView>-->
     <!--</LinearLayout>-->
 
     <!--<LinearLayout-->
 
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="100dp">-->
+
         <!--<android.support.v4.view.ViewPager-->
             <!--android:id="@+id/recommend_vp"-->
             <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="100dp"-->
-            <!--&gt;</android.support.v4.view.ViewPager>-->
+            <!--android:layout_height="100dp"></android.support.v4.view.ViewPager>-->
     <!--</LinearLayout>-->
 
     <com.handmark.pulltorefresh.library.PullToRefreshListView
@@ -68,9 +68,9 @@
         android:layout_height="match_parent">
 
         <!--<android.support.v4.view.ViewPager-->
-            <!--android:id="@+id/recommend_vp"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="100dp"></android.support.v4.view.ViewPager>-->
+        <!--android:id="@+id/recommend_vp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="100dp"></android.support.v4.view.ViewPager>-->
 
     </com.handmark.pulltorefresh.library.PullToRefreshListView>
 

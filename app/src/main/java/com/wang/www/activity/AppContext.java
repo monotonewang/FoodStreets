@@ -1,4 +1,4 @@
-package com.wang.www;
+package com.wang.www.activity;
 
 import android.app.Application;
 
