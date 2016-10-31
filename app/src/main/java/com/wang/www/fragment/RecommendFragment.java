@@ -4,10 +4,13 @@ import android.graphics.drawable.AnimationDrawable;
 import android.os.Handler;
 import android.support.v4.view.ViewPager;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -15,6 +18,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.StringRequestListener;
+import com.bumptech.glide.Glide;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.viewpagerindicator.CirclePageIndicator;
 import com.wang.www.R;
@@ -159,8 +163,6 @@ public class RecommendFragment extends BaseFragment {
                             }
 
                             RecommendViewPagerAdapter recommendViewPagerAdapter = new RecommendViewPagerAdapter(getFragmentManager(), sanCanEntities, sanCanTitleEntities, getActivity());
-
-
 //                            viewPager.setAdapter(recommendViewPagerAdapter);
                             ListView listView = recommendListView.getRefreshableView();
 //                            addHeaderTextView(listView);
@@ -170,14 +172,24 @@ public class RecommendFragment extends BaseFragment {
                             //set circle
                             CirclePageIndicator circlePageIndicator = recommendView.getCirclePageIndicator();
                             circlePageIndicator.setViewPager(viewPager);
+
                             //fenlei
                             List<RecommendEntity.ObjBean.FenleiBean> fenlei = recommendEntity.getObj().getFenlei();
                             RecommendFenleiView recommendFenleiView = new RecommendFenleiView(getActivity());
                             WindowManager windowManager = getActivity().getWindowManager();
                             recommendFenleiView.setTotal(fenlei, windowManager);
 
+                            //func
+                            View recommendFuncView = LayoutInflater.from(getActivity()).inflate(R.layout.custom_func, new LinearLayout(getActivity()));
+                            ImageView imageView1 = (ImageView) recommendFuncView.findViewById(R.id.iv_func1);
+                            ImageView imageView2 = (ImageView) recommendFuncView.findViewById(R.id.iv_func2);
+                            Glide.with(getActivity()).load(recommendEntity.getObj().getFunc1().getImage()).into(imageView1);
+                            Glide.with(getActivity()).load(recommendEntity.getObj().getFunc2().getImage()).into(imageView2);
+
+
                             listView.addHeaderView(recommendView);
                             listView.addHeaderView(recommendFenleiView);
+                            listView.addHeaderView(recommendFuncView);
 
                         }
 
