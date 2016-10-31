@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.support.v4.view.ViewPager;
 import android.view.Gravity;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -19,9 +20,8 @@ import com.viewpagerindicator.CirclePageIndicator;
 import com.wang.www.R;
 import com.wang.www.adapter.RecommendViewPagerAdapter;
 import com.wang.www.base.BaseFragment;
-import com.wang.www.custem.RecommendFragmentVPView;
+import com.wang.www.custem.RecommendFenleiView;
 import com.wang.www.custem.RecommendView;
-import com.wang.www.model.MainEntity;
 import com.wang.www.model.RecommendEntity;
 import com.wang.www.util.Constants;
 
@@ -34,11 +34,8 @@ import java.util.List;
 public class RecommendFragment extends BaseFragment {
     private String TAG = "RecommendFragment";
     //    private List<MainEntity.ObjEntity.SanCanEntity> sanCanEntitie;
-    private List<ArrayList<MainEntity.ObjEntity.SanCanEntity>> sanCanEntities;//这是ViewPager传递的数据
-    private List<ArrayList<MainEntity.ObjEntity.SanCanTitlesEntity>> sanCanTitlesEntities;
     //    @Bind(R.id.fragment_recommend_ptrView)
 //    public PullToRefreshView pullToRefreshView;
-    private RecommendFragmentVPView recommendFragmentVPView;
     private Handler handler = new Handler();
     private String name;
     private AnimationDrawable animation;
@@ -173,8 +170,14 @@ public class RecommendFragment extends BaseFragment {
                             //set circle
                             CirclePageIndicator circlePageIndicator = recommendView.getCirclePageIndicator();
                             circlePageIndicator.setViewPager(viewPager);
+                            //fenlei
+                            List<RecommendEntity.ObjBean.FenleiBean> fenlei = recommendEntity.getObj().getFenlei();
+                            RecommendFenleiView recommendFenleiView = new RecommendFenleiView(getActivity());
+                            WindowManager windowManager = getActivity().getWindowManager();
+                            recommendFenleiView.setTotal(fenlei, windowManager);
 
                             listView.addHeaderView(recommendView);
+                            listView.addHeaderView(recommendFenleiView);
 
                         }
 
