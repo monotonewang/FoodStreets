@@ -22,16 +22,18 @@ import java.util.List;
 
 public class RecommendViewPagerAdapter extends FragmentPagerAdapter {
     private List<ArrayList<RecommendEntity.ObjBean.SanCanBean>> sanCanEntity;
+    private List<ArrayList<RecommendEntity.ObjBean.SanCanTitlesBean>> sanCanTitlesEntities;
     private String TAG = "RecommendViewPager";
 
-    public RecommendViewPagerAdapter(FragmentManager fm, List<ArrayList<RecommendEntity.ObjBean.SanCanBean>> sanCanEntitys, Context context) {
+    public RecommendViewPagerAdapter(FragmentManager fm, List<ArrayList<RecommendEntity.ObjBean.SanCanBean>> sanCanEntitys, List<ArrayList<RecommendEntity.ObjBean.SanCanTitlesBean>> sanCanTitlesEntities, Context context) {
         super(fm);
         this.sanCanEntity = sanCanEntitys;
+        this.sanCanTitlesEntities = sanCanTitlesEntities;
     }
 
     @Override
     public Fragment getItem(int position) {
-        Fragment fragment = RecommendViewPagerFragment.getInstance(sanCanEntity.get(position));
+        Fragment fragment = RecommendViewPagerFragment.getInstance(sanCanEntity.get(position), sanCanTitlesEntities.get(position));
         return fragment;
     }
 

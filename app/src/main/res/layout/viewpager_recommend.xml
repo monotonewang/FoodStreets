@@ -11,12 +11,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="360dp"
+        android:layout_height="270dp"
         android:orientation="vertical">
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="120dp">
+            android:layout_height="90dp">
 
             <ImageView
                 android:id="@+id/viewPager_recommend_iv_first"
@@ -48,7 +48,7 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="120dp">
+            android:layout_height="90dp">
 
             <ImageView
                 android:id="@+id/viewPager_recommend_iv_second"
@@ -77,7 +77,7 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="120dp">
+            android:layout_height="90dp">
 
             <ImageView
                 android:id="@+id/viewPager_recommend_iv_third"
@@ -106,5 +106,22 @@
             </LinearLayout>
         </FrameLayout>
 
+
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/viewPager_recommend_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/app_name"
+        android:textColor="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/viewPager_recommend_tv_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/app_name"
+        android:textColor="@color/colorAccent" />
 </LinearLayout>

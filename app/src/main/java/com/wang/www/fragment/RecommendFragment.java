@@ -136,7 +136,6 @@ public class RecommendFragment extends BaseFragment {
                         if (Integer.parseInt(recommendEntity.getCode()) == 1) {
                             List<RecommendEntity.ObjBean.SanCanBean> san_can = recommendEntity.getObj().getSan_can();
                             ArrayList<RecommendEntity.ObjBean.SanCanBean> sancanEntity = (ArrayList<RecommendEntity.ObjBean.SanCanBean>) san_can;
-
                             List<ArrayList<RecommendEntity.ObjBean.SanCanBean>> sanCanEntities = new ArrayList<>();
                             int i = -3;
                             for (int k = 0; k < sancanEntity.size() / 3; k++) {
@@ -148,7 +147,23 @@ public class RecommendFragment extends BaseFragment {
                                 sanCanEntities.add(dataList);
                             }
 
-                            RecommendViewPagerAdapter recommendViewPagerAdapter = new RecommendViewPagerAdapter(getFragmentManager(), sanCanEntities, getActivity());
+                            //title
+                            List<RecommendEntity.ObjBean.SanCanTitlesBean> san_can_titles = recommendEntity.getObj().getSan_can_titles();
+                            ArrayList<RecommendEntity.ObjBean.SanCanTitlesBean> sanCanTitlesEntity = (ArrayList<RecommendEntity.ObjBean.SanCanTitlesBean>) san_can_titles;
+                            List<ArrayList<RecommendEntity.ObjBean.SanCanTitlesBean>> sanCanTitleEntities = new ArrayList<>();
+                            int y = -1;
+                            for (int k = 0; k < san_can_titles.size(); k++) {
+                                ArrayList<RecommendEntity.ObjBean.SanCanTitlesBean> datas = new ArrayList<>();
+                                y = y + 1;
+                                for (int t = y; t < y + 1; t++) {
+                                    datas.add(sanCanTitlesEntity.get(t));
+                                }
+                                sanCanTitleEntities.add(datas);
+                            }
+
+                            RecommendViewPagerAdapter recommendViewPagerAdapter = new RecommendViewPagerAdapter(getFragmentManager(), sanCanEntities, sanCanTitleEntities, getActivity());
+
+
 //                            viewPager.setAdapter(recommendViewPagerAdapter);
                             ListView listView = recommendListView.getRefreshableView();
 //                            addHeaderTextView(listView);

@@ -24,10 +24,11 @@ import java.util.ArrayList;
 
 public class RecommendViewPagerFragment extends BaseFragment {
 
-    public static Fragment getInstance(ArrayList<RecommendEntity.ObjBean.SanCanBean> sanCanBeen) {
+    public static Fragment getInstance(ArrayList<RecommendEntity.ObjBean.SanCanBean> sanCanBeen, ArrayList<RecommendEntity.ObjBean.SanCanTitlesBean> sanCanTitlesBeen) {
         RecommendViewPagerFragment recommendViewPagerFragment = new RecommendViewPagerFragment();
         Bundle bundle = new Bundle();
-        bundle.putSerializable(Constants.KEYNAME.RECOMMEND_VIEWPAGER, sanCanBeen);
+        bundle.putSerializable(Constants.KEYNAME.RECOMMEND_SAN_CAN, sanCanBeen);
+        bundle.putSerializable(Constants.KEYNAME.RECOMMEND_SAN_CAN_TITLE, sanCanTitlesBeen);
         recommendViewPagerFragment.setArguments(bundle);
         return recommendViewPagerFragment;
     }
@@ -49,10 +50,14 @@ public class RecommendViewPagerFragment extends BaseFragment {
         TextView tvFouth = (TextView) view.findViewById(R.id.viewPager_recommend_tv_fouth);
         TextView tvFifth = (TextView) view.findViewById(R.id.viewPager_recommend_tv_five);
         TextView tvSix = (TextView) view.findViewById(R.id.viewPager_recommend_tv_six);
+        TextView tvTitle = (TextView) view.findViewById(R.id.viewPager_recommend_tv_title);
+        TextView tvDesc = (TextView) view.findViewById(R.id.viewPager_recommend_tv_desc);
+
 
 //        TextView tv = (TextView) view.findViewById(R.id.viewpager_recommend_tv);
         Bundle bundle = getArguments();
-        ArrayList<RecommendEntity.ObjBean.SanCanBean> sanCanList = (ArrayList<RecommendEntity.ObjBean.SanCanBean>) bundle.getSerializable(Constants.KEYNAME.RECOMMEND_VIEWPAGER);
+        ArrayList<RecommendEntity.ObjBean.SanCanBean> sanCanList = (ArrayList<RecommendEntity.ObjBean.SanCanBean>) bundle.getSerializable(Constants.KEYNAME.RECOMMEND_SAN_CAN);
+        ArrayList<RecommendEntity.ObjBean.SanCanTitlesBean> sanCanTitleList = (ArrayList<RecommendEntity.ObjBean.SanCanTitlesBean>) bundle.getSerializable(Constants.KEYNAME.RECOMMEND_SAN_CAN_TITLE);
         Glide.with(this).load(sanCanList.get(0).getTitlepic()).into(ivFirst);
         Glide.with(this).load(sanCanList.get(1).getTitlepic()).into(ivSecond);
         Glide.with(this).load(sanCanList.get(2).getTitlepic()).into(ivThird);
@@ -62,6 +67,9 @@ public class RecommendViewPagerFragment extends BaseFragment {
         tvFouth.setText(sanCanList.get(1).getDescr());
         tvFifth.setText(sanCanList.get(2).getTitle());
         tvSix.setText(sanCanList.get(2).getDescr());
+
+        tvTitle.setText(sanCanTitleList.get(0).getTitle());
+        tvDesc.setText(sanCanTitleList.get(0).getSub_title());
 
     }
 
