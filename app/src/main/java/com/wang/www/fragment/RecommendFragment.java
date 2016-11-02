@@ -11,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -312,12 +311,10 @@ public class RecommendFragment extends BaseFragment {
      * @param listView
      */
     private void addHeaderTextView(ListView listView) {
-        AbsListView.LayoutParams layoutParams = new AbsListView.LayoutParams(AbsListView.LayoutParams.MATCH_PARENT, AbsListView.LayoutParams.WRAP_CONTENT);
         TextView textView = new TextView(getActivity());
         textView.setText("add");
         textView.setGravity(Gravity.CENTER);
         textView.setTextSize(16);
-        textView.setLayoutParams(layoutParams);
         listView.addHeaderView(textView);
     }
 
