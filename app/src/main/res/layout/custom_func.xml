@@ -24,6 +24,8 @@
     </LinearLayout>
 
     <TextView
+        android:typeface="normal"
+        android:id="@+id/custom_func_shop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"

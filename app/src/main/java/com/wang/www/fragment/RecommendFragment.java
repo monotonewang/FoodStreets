@@ -1,10 +1,11 @@
 package com.wang.www.fragment;
 
+import android.content.res.AssetManager;
+import android.graphics.Typeface;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,14 +26,20 @@ import com.bumptech.glide.Glide;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.viewpagerindicator.CirclePageIndicator;
 import com.wang.www.R;
+import com.wang.www.adapter.RecommendShopAdapter;
 import com.wang.www.adapter.RecommendTop3Adapter;
 import com.wang.www.adapter.RecommendViewPagerAdapter;
 import com.wang.www.base.BaseFragment;
+import com.wang.www.custem.CustomListView;
 import com.wang.www.custem.RecommendFenleiView;
 import com.wang.www.custem.RecommendView;
 import com.wang.www.model.RecommendEntity;
 import com.wang.www.util.Constants;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,9 +54,9 @@ public class RecommendFragment extends BaseFragment {
     private Handler handler = new Handler();
     private String name;
     private AnimationDrawable animation;
-    private RecommendView recommendView;
     private PullToRefreshListView recommendListView;
     private ViewPager viewPager;
+
 
     @Override
     protected int getViewResId() {
@@ -131,57 +138,114 @@ public class RecommendFragment extends BaseFragment {
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, list);
         recommendListView.setAdapter(arrayAdapter);
 
-        AndroidNetworking.post(Constants.URL.recommendUrl)
-                .build()
-                .getAsString(new StringRequestListener() {
-                    @Override
-                    public void onResponse(String response) {
-                        RecommendEntity recommendEntity = JSONObject.parseObject(response, RecommendEntity.class);
-//                        Log.e(TAG,recommendEntity.toString());
-                        if (Integer.parseInt(recommendEntity.getCode()) == 1) {
-                            Log.e(TAG, "onResponse: " + recommendEntity);
-                            ListView listView = recommendListView.getRefreshableView();
-                            //topViewPager
-                            setTopViewPager(recommendEntity);
+        if (getJsonFromAsstes() != null) {
+            RecommendEntity recommendEntity = getJsonFromAsstes();
+            showViews(recommendEntity);
+        } else {
+            AndroidNetworking.post(Constants.URL.recommendUrl)
+                    .build()
+                    .getAsString(new StringRequestListener() {
 
-                            //fenlei
-                            RecommendFenleiView recommendFenleiView = setFenleiView(recommendEntity);
-
-                            //func
-                            LinearLayout recommendFuncView = setFuncView(recommendEntity);
-
-                            //top3
-                            ViewPager top3VPView = new ViewPager(getActivity());
-                            ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 500);
-                            top3VPView.setLayoutParams(layoutParams);
-
-//                            LinearLayout recommencTop3View = (LinearLayout) LayoutInflater.from(getActivity()).inflate(R.layout.fragment_vp_top3, new LinearLayout(getActivity()), true);
-//                            ViewPager viewPager = (ViewPager) recommencTop3View.findViewById(R.id.fragment_recommend_vp_top3);
-
-                            RecommendTop3Adapter recommendTop3Adapter = new RecommendTop3Adapter(recommendEntity.getObj().getTop3(), getActivity());
-                            top3VPView.setAdapter(recommendTop3Adapter);
-
-
-                            listView.addHeaderView(recommendView);
-                            listView.addHeaderView(recommendFenleiView);
-                            listView.addHeaderView(recommendFuncView);
-                            listView.addHeaderView(top3VPView);
-
+                        @Override
+                        public void onResponse(String response) {
+                            RecommendEntity recommendEntity = JSONObject.parseObject(response, RecommendEntity.class);
+                            showViews(recommendEntity);
                         }
 
-                    }
+                        @Override
+                        public void onError(ANError anError) {
 
-                    @Override
-                    public void onError(ANError anError) {
-
-                    }
-                });
+                        }
+                    });
+        }
 //        recommendFragmentVPView.setUrl(Constants.URL.RecommendUrl);
+    }
+
+    private void showViews(RecommendEntity recommendEntity) {
+        if (Integer.parseInt(recommendEntity.getCode()) == 1) {
+            ListView listView = recommendListView.getRefreshableView();
+            //topViewPager
+            RecommendView recommendView = setTopViewPager(recommendEntity);
+
+            //fenlei
+            RecommendFenleiView recommendFenleiView = setFenleiView(recommendEntity);
+
+            //func
+            LinearLayout recommendFuncView = setFuncView(recommendEntity);
+
+            //top3
+            ViewPager top3VPView = setTop3View(recommendEntity);
+
+            //shops
+            CustomListView lvShop = setShopView(recommendEntity);
+
+
+            listView.addHeaderView(recommendView);
+            listView.addHeaderView(recommendFenleiView);
+            listView.addHeaderView(recommendFuncView);
+            listView.addHeaderView(top3VPView);
+            listView.addHeaderView(lvShop);
+
+        }
+    }
+
+    private RecommendEntity getJsonFromAsstes() {
+        AssetManager assets = getActivity().getAssets();
+        ByteArrayOutputStream out;
+        byte[] buffer = null;
+        try {
+            InputStream inputStream = assets.open("json/recommendFragment.json");
+            out = new ByteArrayOutputStream();
+            int len;
+            byte[] bs = new byte[1024];
+            while ((len = inputStream.read(bs)) != -1) {
+                out.write(bs, 0, len);
+            }
+            buffer = out.toByteArray();
+            inputStream.close();
+            out.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (buffer != null) {
+            try {
+                String json = new String(buffer, "utf-8");
+                return JSONObject.parseObject(json, RecommendEntity.class);
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
+
+    @NonNull
+    private CustomListView setShopView(RecommendEntity recommendEntity) {
+        CustomListView lvShop = new CustomListView(getActivity());
+        RecommendShopAdapter recommendShopAdapter = new RecommendShopAdapter(getActivity(), R.layout.listview_recommend_shop);
+        List<RecommendEntity.ObjBean.ShopsBean> shopsBeanList = recommendEntity.getObj().getShops();
+        recommendShopAdapter.setDatas(shopsBeanList);
+        lvShop.setAdapter(recommendShopAdapter);
+        return lvShop;
+    }
+
+    @NonNull
+    private ViewPager setTop3View(RecommendEntity recommendEntity) {
+        ViewPager top3VPView = new ViewPager(getActivity());
+        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 500);
+        top3VPView.setLayoutParams(layoutParams);
+        RecommendTop3Adapter recommendTop3Adapter = new RecommendTop3Adapter(recommendEntity.getObj().getTop3(), getActivity());
+        top3VPView.setAdapter(recommendTop3Adapter);
+        return top3VPView;
     }
 
     @NonNull
     private LinearLayout setFuncView(RecommendEntity recommendEntity) {
         LinearLayout recommendFuncView = (LinearLayout) LayoutInflater.from(getActivity()).inflate(R.layout.custom_func, new LinearLayout(getActivity()));
+
+        TextView textView = (TextView) recommendFuncView.findViewById(R.id.custom_func_shop);
+        Typeface typeface = Typeface.createFromAsset(getActivity().getAssets(), "fonts/xxx.ttf");
+        textView.setTypeface(typeface);
+
         ImageView imageView1 = (ImageView) recommendFuncView.findViewById(R.id.iv_func1);
         ImageView imageView2 = (ImageView) recommendFuncView.findViewById(R.id.iv_func2);
         Glide.with(getActivity()).load(recommendEntity.getObj().getFunc1().getImage()).into(imageView1);
@@ -198,7 +262,8 @@ public class RecommendFragment extends BaseFragment {
         return recommendFenleiView;
     }
 
-    private void setTopViewPager(RecommendEntity recommendEntity) {
+    @NonNull
+    private RecommendView setTopViewPager(RecommendEntity recommendEntity) {
         //viewPager image
         List<RecommendEntity.ObjBean.SanCanBean> san_can = recommendEntity.getObj().getSan_can();
         ArrayList<RecommendEntity.ObjBean.SanCanBean> sancanEntity = (ArrayList<RecommendEntity.ObjBean.SanCanBean>) san_can;
@@ -231,12 +296,13 @@ public class RecommendFragment extends BaseFragment {
 //                            viewPager.setAdapter(recommendViewPagerAdapter);
 
 //                            addHeaderTextView(listView);
-        recommendView = new RecommendView(getActivity());
+        RecommendView recommendView = new RecommendView(getActivity());
         ViewPager viewPager = recommendView.getViewPager();
         viewPager.setAdapter(recommendViewPagerAdapter);
         //set circle
         CirclePageIndicator circlePageIndicator = recommendView.getCirclePageIndicator();
         circlePageIndicator.setViewPager(viewPager);
+        return recommendView;
 
     }
 

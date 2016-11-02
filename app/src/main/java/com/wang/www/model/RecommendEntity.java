@@ -571,7 +571,7 @@ public class RecommendEntity {
             }
         }
 
-        public static class SanCanTitlesBean {
+        public static class SanCanTitlesBean implements Serializable{
             private String title;
             private String sub_title;
             private String titlepic;
@@ -650,7 +650,7 @@ public class RecommendEntity {
             }
         }
 
-        public static class FenleiBean {
+        public static class FenleiBean implements Serializable {
             private String title;
             private String image;
             private String click_type;
@@ -709,7 +709,7 @@ public class RecommendEntity {
             }
         }
 
-        public static class Top3Bean {
+        public static class Top3Bean  implements Serializable{
             private String photo;
             private int click_type;
             private String click_obj;
@@ -798,7 +798,7 @@ public class RecommendEntity {
             }
         }
 
-        public static class Top4Bean {
+        public static class Top4Bean implements Serializable{
             private String photo;
             private int click_type;
             private String click_obj;
@@ -887,7 +887,7 @@ public class RecommendEntity {
             }
         }
 
-        public static class ShopsBean {
+        public static class ShopsBean implements Serializable{
             private String id;
             private String title;
             private String price;
@@ -956,7 +956,7 @@ public class RecommendEntity {
             }
         }
 
-        public static class ZtBean {
+        public static class ZtBean implements Serializable{
             private String id;
             private String title;
             private String type;

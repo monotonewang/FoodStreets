@@ -2,6 +2,7 @@ package com.wang.www.adapter;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -33,7 +34,8 @@ public class RecommendTop3Adapter extends PagerAdapter {
 //            View view = LayoutInflater.from(context).inflate(R.layout.fragment_vp_top3_child, new LinearLayout(context));
 //            View view = LayoutInflater.from(context).inflate(R.layout.fragment_vp_top3_child, null,true);
             ImageView imageView = new ImageView(context);
-            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(100, 100);
+//            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             imageView.setLayoutParams(layoutParams);
 //            ImageView imageView = (ImageView) view.findViewById(R.id.fragment_iv_top3_child);
             Glide.with(context).load(top3.get(i).getPhoto()).into(imageView);
@@ -58,12 +60,12 @@ public class RecommendTop3Adapter extends PagerAdapter {
     public Object instantiateItem(ViewGroup container, int position) {
 //        container.addView(viewList.get(position));
 //        return viewList.get(position);
+        int index = position % viewList.size();
+        Log.e(TAG, "instantiateItem: position" + position + "index" + index);
 
-        int index=position%viewList.size();
-
-        if(viewList.size()>0){
-            View view=viewList.get(index);
-            if(container.equals(view.getParent())){
+        if (viewList.size() > 0) {
+            View view = viewList.get(index);
+            if (container.equals(view.getParent())) {
                 container.removeView(view);
             }
             container.addView(view);
@@ -75,7 +77,7 @@ public class RecommendTop3Adapter extends PagerAdapter {
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
 //        container.removeView(viewList.get(position));
-        int index=position%viewList.size();
+        int index = position % viewList.size();
         container.removeView(viewList.get(index));
     }
 }
