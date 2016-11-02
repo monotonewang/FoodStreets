@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.ViewPager;
 import android.util.DisplayMetrics;
+import android.view.View;
 
 import com.wang.www.R;
 import com.wang.www.adapter.WelcomeAdapter;
@@ -34,8 +35,8 @@ public class WelcomeActivity extends BaseActivity {
     }
 
     @Override
-    protected void init() {
-        super.init();
+    protected void init(View view) {
+        super.init(view);
         handler = new Handler() {
             @Override
             public void handleMessage(Message msg) {

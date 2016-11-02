@@ -9,4 +9,6 @@
     <color name="colorVpWhite">#ffffff</color>
     <!--主页的头部Search的中间button的背景颜色-->
     <color name="colorHeadBg">#F1F1F1</color>
+    <color name="black">#000000</color>
+    <color name="cate_filter_separator">#d9d9d9</color>
 </resources>

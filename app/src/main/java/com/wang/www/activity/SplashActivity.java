@@ -2,6 +2,7 @@ package com.wang.www.activity;
 
 import android.content.Intent;
 import android.os.Handler;
+import android.view.View;
 
 import com.wang.www.R;
 import com.wang.www.base.BaseActivity;
@@ -23,8 +24,8 @@ public class SplashActivity extends BaseActivity {
     }
 
     @Override
-    protected void init() {
-        super.init();
+    protected void init(View view) {
+        super.init(view);
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {

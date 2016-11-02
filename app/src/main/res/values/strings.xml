@@ -12,4 +12,6 @@
     <string name="fragment_recommend_RadioButton_mine">我的</string>
     <string name="custem_fenlei_fragment_recommend">最新商品</string>
     <string name="fragment_recommend_hot_tv">最热商品</string>
+
+    <string name="text_myinfo_birth_title">Birthday</string>
 </resources>

@@ -3,6 +3,7 @@ package com.wang.www.activity;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -43,8 +44,8 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
     }
 
     @Override
-    protected void init() {
-        super.init();
+    protected void init(View view) {
+        super.init(view);
         radioGroup.setOnCheckedChangeListener(this);
 
         fragmentManager = getFragmentManager();

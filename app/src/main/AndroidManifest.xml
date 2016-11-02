@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wang.www">
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name="com.wang.www.activity.AppContext"
         android:allowBackup="true"
@@ -18,10 +20,15 @@
             </intent-filter>
         </activity>
         <!--欢迎ViewPager-->
-        <activity android:name=".activity.WelcomeActivity" android:launchMode="singleTop">
+        <activity
+            android:name=".activity.WelcomeActivity"
+            android:launchMode="singleTop">
 
         </activity>
         <activity android:name=".activity.MainActivity">
+
+        </activity>
+        <activity android:name=".activity.TimePickActivity">
 
         </activity>
     </application>

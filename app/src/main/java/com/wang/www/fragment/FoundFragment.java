@@ -1,13 +1,17 @@
 package com.wang.www.fragment;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.alibaba.fastjson.JSONObject;
@@ -16,12 +20,18 @@ import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.StringRequestListener;
 import com.wang.www.R;
 import com.wang.www.base.BaseFragment;
+import com.wang.www.birth.WheelMain;
 import com.wang.www.model.IPEntity;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import butterknife.Bind;
+
+import static com.wang.www.R.id.found;
 
 /**
  * Created by user on 2016/2/25.
@@ -29,7 +39,7 @@ import butterknife.Bind;
 public class FoundFragment extends BaseFragment {
     private String TAG = "FoundFragment";
 
-    @Bind(R.id.found)
+    @Bind(found)
     TextView textView;
 
     @Override
@@ -41,10 +51,98 @@ public class FoundFragment extends BaseFragment {
     @Override
     protected void init(View view) {
         super.init(view);
+
         ViewPager viewPager = (ViewPager) view.findViewById(R.id.shop_vp);
         String datas[] = {"text", "sss", "sssss", "testsss"};
         MyPagerAdapter myPagerAdapter = new MyPagerAdapter(getActivity(), datas);
         viewPager.setAdapter(myPagerAdapter);
+        TextView foundTv = (TextView) view.findViewById(found);
+
+        foundTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Intent intent = new Intent(getActivity(), TimePickActivity.class);
+//                startActivity(intent);
+                DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                Calendar calendar = Calendar.getInstance();
+                String txtTime = calendar.get(Calendar.YEAR) + "-" + (calendar.get(Calendar.MONTH) + 1) + "-"
+                        + calendar.get(Calendar.DAY_OF_MONTH) + "";
+                View mBirthView = LayoutInflater.from(getActivity()).inflate(R.layout.pop_timepicker, null);
+                ImageView ivConfim = (ImageView) mBirthView.findViewById(R.id.ivConfirm);
+                ivConfim.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                });
+                ScreenInfo screenInfo = new ScreenInfo(getActivity());
+                WheelMain mWheelMain = new WheelMain(mBirthView);
+            }
+        });
+    }
+
+    public class ScreenInfo {
+        private Activity activity;
+        private int width;
+        private int height;
+        private float density;
+        private int densityDpi;
+
+        public Activity getActivity() {
+            return activity;
+        }
+
+        public void setActivity(Activity activity) {
+            this.activity = activity;
+        }
+
+        public int getWidth() {
+            return width;
+        }
+
+        public void setWidth(int width) {
+            this.width = width;
+        }
+
+        public int getHeight() {
+            return height;
+        }
+
+        public void setHeight(int height) {
+            this.height = height;
+        }
+
+        public float getDensity() {
+            return density;
+        }
+
+        public void setDensity(float density) {
+            this.density = density;
+        }
+
+        public int getDensityDpi() {
+            return densityDpi;
+        }
+
+        public void setDensityDpi(int densityDpi) {
+            this.densityDpi = densityDpi;
+        }
+
+        public ScreenInfo(Activity activity) {
+            this.activity = activity;
+            ini();
+        }
+
+        private void ini() {
+            DisplayMetrics metric = new DisplayMetrics();
+            activity.getWindowManager().getDefaultDisplay().getMetrics(metric);
+            width = metric.widthPixels;
+            height = metric.heightPixels;
+            density = metric.density;
+            densityDpi = metric.densityDpi;
+        }
+
+
     }
 
     @Override
