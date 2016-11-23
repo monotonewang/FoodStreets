@@ -61,7 +61,7 @@ public class RecommendTop3Adapter extends PagerAdapter {
 //        container.addView(viewList.get(position));
 //        return viewList.get(position);
         int index = position % viewList.size();
-        Log.e(TAG, "instantiateItem: position" + position + "index" + index);
+//        Log.e(TAG, "instantiateItem: position" + position + "index" + index);
 
         if (viewList.size() > 0) {
             View view = viewList.get(index);

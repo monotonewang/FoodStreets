@@ -4,8 +4,10 @@ import android.content.res.AssetManager;
 import android.graphics.Typeface;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Handler;
+import android.os.SystemClock;
 import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,6 +43,8 @@ import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.wang.www.R.attr.count;
 
 /**
  * Created by user on 2016/2/25.
@@ -173,7 +177,7 @@ public class RecommendFragment extends BaseFragment {
             LinearLayout recommendFuncView = setFuncView(recommendEntity);
 
             //top3
-            ViewPager top3VPView = setTop3View(recommendEntity);
+            final ViewPager top3VPView = setTop3View(recommendEntity);
 
             //shops
             CustomListView lvShop = setShopView(recommendEntity);
@@ -234,14 +238,17 @@ public class RecommendFragment extends BaseFragment {
         top3VPView.setLayoutParams(layoutParams);
         RecommendTop3Adapter recommendTop3Adapter = new RecommendTop3Adapter(recommendEntity.getObj().getTop3(), getActivity());
         top3VPView.setAdapter(recommendTop3Adapter);
-        new Handler().postDelayed(new Runnable() {
+        //viewPager auto shuffling
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+
             @Override
             public void run() {
-                if(top3VPView!=null){
-                    top3VPView.setCurrentItem(top3VPView.getCurrentItem()+1);
-                }
+                top3VPView.setCurrentItem(top3VPView.getCurrentItem() + 1);
+                handler.postDelayed(this, 1000);
+
             }
-        },2000);
+        }, 2000);
         return top3VPView;
     }
 
