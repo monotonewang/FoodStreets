@@ -229,11 +229,19 @@ public class RecommendFragment extends BaseFragment {
 
     @NonNull
     private ViewPager setTop3View(RecommendEntity recommendEntity) {
-        ViewPager top3VPView = new ViewPager(getActivity());
+        final ViewPager top3VPView = new ViewPager(getActivity());
         ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 500);
         top3VPView.setLayoutParams(layoutParams);
         RecommendTop3Adapter recommendTop3Adapter = new RecommendTop3Adapter(recommendEntity.getObj().getTop3(), getActivity());
         top3VPView.setAdapter(recommendTop3Adapter);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if(top3VPView!=null){
+                    top3VPView.setCurrentItem(top3VPView.getCurrentItem()+1);
+                }
+            }
+        },2000);
         return top3VPView;
     }
 
