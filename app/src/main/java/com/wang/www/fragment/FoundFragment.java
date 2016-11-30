@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
@@ -12,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.alibaba.fastjson.JSONObject;
@@ -22,8 +24,10 @@ import com.wang.www.R;
 import com.wang.www.base.BaseFragment;
 import com.wang.www.birth.WheelMain;
 import com.wang.www.model.IPEntity;
+import com.wang.www.util.ToolPopWindow;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -38,9 +42,12 @@ import static com.wang.www.R.id.found;
  */
 public class FoundFragment extends BaseFragment {
     private String TAG = "FoundFragment";
+    private ToolPopWindow mToolPopWindow;//时间选择窗口
+    private WheelMain mWheelMain;//时间轮
 
     @Bind(found)
     TextView textView;
+    private View mBirthView;
 
     @Override
     protected int getViewResId() {
@@ -57,7 +64,47 @@ public class FoundFragment extends BaseFragment {
         MyPagerAdapter myPagerAdapter = new MyPagerAdapter(getActivity(), datas);
         viewPager.setAdapter(myPagerAdapter);
         TextView foundTv = (TextView) view.findViewById(found);
+        TextView wheel = (TextView) view.findViewById(R.id.wheel);
+        wheel.setOnClickListener(new View.OnClickListener() {
 
+            @Override
+            public void onClick(View v) {
+                if(mToolPopWindow == null){
+                    DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                    Calendar calendar = Calendar.getInstance();
+                    String txtTime = calendar.get(Calendar.YEAR) + "-" + (calendar.get(Calendar.MONTH) + 1) + "-"
+                            + calendar.get(Calendar.DAY_OF_MONTH) + "";
+                    mBirthView = LayoutInflater.from(getActivity()).inflate(R.layout.pop_timepicker, null);
+                    ImageView  ivConfim = (ImageView) mBirthView.findViewById(R.id.ivConfirm);
+                    ivConfim.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            String birth = mWheelMain.getTime();
+                            if (!TextUtils.isEmpty(birth)) {
+                                Log.e(TAG, "onClick: "+birth );
+                            }
+                        }
+                    });
+
+                    ScreenInfo screenInfo = new ScreenInfo(getActivity());
+                    mWheelMain = new WheelMain(mBirthView);
+                    mWheelMain.screenheight = screenInfo.getHeight();
+                    try {
+                        calendar.setTime(dateFormat.parse(txtTime));
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+                    int year = calendar.get(Calendar.YEAR);
+                    int month = calendar.get(Calendar.MONTH);
+                    int day = calendar.get(Calendar.DAY_OF_MONTH);
+                    mWheelMain.initDateTimePicker(year, month, day);
+                    mToolPopWindow = ToolPopWindow.getInstance(getActivity());
+                }
+                mToolPopWindow.init(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.MATCH_PARENT).showPopWindow(mBirthView,
+                        ToolPopWindow.ATTACH_LOCATION_WINDOW, null, 0, 0);
+
+            }
+        });
         foundTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
